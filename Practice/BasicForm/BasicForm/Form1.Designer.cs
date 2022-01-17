@@ -44,6 +44,7 @@
             // 
             this.subTotalLabel.AutoSize = true;
             this.subTotalLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.subTotalLabel.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.subTotalLabel.Location = new System.Drawing.Point(47, 56);
             this.subTotalLabel.Name = "subTotalLabel";
             this.subTotalLabel.Size = new System.Drawing.Size(84, 20);
@@ -54,6 +55,7 @@
             // 
             this.discountPercentLabel.AutoSize = true;
             this.discountPercentLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.discountPercentLabel.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.discountPercentLabel.Location = new System.Drawing.Point(47, 104);
             this.discountPercentLabel.Name = "discountPercentLabel";
             this.discountPercentLabel.Size = new System.Drawing.Size(161, 20);
@@ -65,6 +67,7 @@
             // 
             this.discountAmountLabel.AutoSize = true;
             this.discountAmountLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.discountAmountLabel.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.discountAmountLabel.Location = new System.Drawing.Point(47, 153);
             this.discountAmountLabel.Name = "discountAmountLabel";
             this.discountAmountLabel.Size = new System.Drawing.Size(159, 20);
@@ -76,6 +79,7 @@
             // 
             this.totalLabel.AutoSize = true;
             this.totalLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.totalLabel.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.totalLabel.Location = new System.Drawing.Point(47, 207);
             this.totalLabel.Name = "totalLabel";
             this.totalLabel.Size = new System.Drawing.Size(57, 20);
@@ -112,28 +116,35 @@
             // 
             // calculateBtn
             // 
+            this.calculateBtn.BackColor = System.Drawing.Color.WhiteSmoke;
             this.calculateBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.calculateBtn.ForeColor = System.Drawing.SystemColors.ControlText;
             this.calculateBtn.Location = new System.Drawing.Point(106, 263);
             this.calculateBtn.Name = "calculateBtn";
             this.calculateBtn.Size = new System.Drawing.Size(128, 39);
             this.calculateBtn.TabIndex = 8;
             this.calculateBtn.Text = "Calculate";
-            this.calculateBtn.UseVisualStyleBackColor = true;
+            this.calculateBtn.UseVisualStyleBackColor = false;
             // 
             // exitBtn
             // 
+            this.exitBtn.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.exitBtn.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.exitBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.exitBtn.Location = new System.Drawing.Point(272, 263);
             this.exitBtn.Name = "exitBtn";
             this.exitBtn.Size = new System.Drawing.Size(128, 39);
             this.exitBtn.TabIndex = 9;
             this.exitBtn.Text = "Exit";
-            this.exitBtn.UseVisualStyleBackColor = true;
+            this.exitBtn.UseVisualStyleBackColor = false;
             // 
             // Form1
             // 
+            this.AcceptButton = this.calculateBtn;
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
+            this.CancelButton = this.exitBtn;
             this.ClientSize = new System.Drawing.Size(466, 352);
             this.Controls.Add(this.exitBtn);
             this.Controls.Add(this.calculateBtn);
@@ -146,7 +157,7 @@
             this.Controls.Add(this.discountPercentLabel);
             this.Controls.Add(this.subTotalLabel);
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "calculateTotal";
             this.ResumeLayout(false);
             this.PerformLayout();
 
