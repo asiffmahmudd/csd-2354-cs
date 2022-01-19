@@ -49,7 +49,7 @@
             this.subTotalLabel.Name = "subTotalLabel";
             this.subTotalLabel.Size = new System.Drawing.Size(84, 20);
             this.subTotalLabel.TabIndex = 0;
-            this.subTotalLabel.Text = "Subtotal:";
+            this.subTotalLabel.Text = "&Subtotal:";
             // 
             // discountPercentLabel
             // 
@@ -59,7 +59,7 @@
             this.discountPercentLabel.Location = new System.Drawing.Point(47, 104);
             this.discountPercentLabel.Name = "discountPercentLabel";
             this.discountPercentLabel.Size = new System.Drawing.Size(161, 20);
-            this.discountPercentLabel.TabIndex = 1;
+            this.discountPercentLabel.TabIndex = 2;
             this.discountPercentLabel.Text = "Discount Percent:";
             this.discountPercentLabel.Click += new System.EventHandler(this.label2_Click);
             // 
@@ -71,7 +71,7 @@
             this.discountAmountLabel.Location = new System.Drawing.Point(47, 153);
             this.discountAmountLabel.Name = "discountAmountLabel";
             this.discountAmountLabel.Size = new System.Drawing.Size(159, 20);
-            this.discountAmountLabel.TabIndex = 2;
+            this.discountAmountLabel.TabIndex = 4;
             this.discountAmountLabel.Text = "Discount Amount:";
             this.discountAmountLabel.Click += new System.EventHandler(this.label3_Click);
             // 
@@ -83,7 +83,7 @@
             this.totalLabel.Location = new System.Drawing.Point(47, 207);
             this.totalLabel.Name = "totalLabel";
             this.totalLabel.Size = new System.Drawing.Size(57, 20);
-            this.totalLabel.TabIndex = 3;
+            this.totalLabel.TabIndex = 6;
             this.totalLabel.Text = "Total:";
             // 
             // subtotalText
@@ -91,21 +91,23 @@
             this.subtotalText.Location = new System.Drawing.Point(233, 53);
             this.subtotalText.Name = "subtotalText";
             this.subtotalText.Size = new System.Drawing.Size(167, 22);
-            this.subtotalText.TabIndex = 4;
+            this.subtotalText.TabIndex = 1;
             // 
             // doscountPercentText
             // 
             this.doscountPercentText.Location = new System.Drawing.Point(233, 102);
             this.doscountPercentText.Name = "doscountPercentText";
+            this.doscountPercentText.ReadOnly = true;
             this.doscountPercentText.Size = new System.Drawing.Size(167, 22);
-            this.doscountPercentText.TabIndex = 5;
+            this.doscountPercentText.TabIndex = 3;
+            this.doscountPercentText.TabStop = false;
             // 
             // discountAmountText
             // 
             this.discountAmountText.Location = new System.Drawing.Point(233, 151);
             this.discountAmountText.Name = "discountAmountText";
             this.discountAmountText.Size = new System.Drawing.Size(167, 22);
-            this.discountAmountText.TabIndex = 6;
+            this.discountAmountText.TabIndex = 5;
             // 
             // totalText
             // 
@@ -123,7 +125,7 @@
             this.calculateBtn.Name = "calculateBtn";
             this.calculateBtn.Size = new System.Drawing.Size(128, 39);
             this.calculateBtn.TabIndex = 8;
-            this.calculateBtn.Text = "Calculate";
+            this.calculateBtn.Text = "&Calculate";
             this.calculateBtn.UseVisualStyleBackColor = false;
             // 
             // exitBtn
@@ -135,7 +137,7 @@
             this.exitBtn.Name = "exitBtn";
             this.exitBtn.Size = new System.Drawing.Size(128, 39);
             this.exitBtn.TabIndex = 9;
-            this.exitBtn.Text = "Exit";
+            this.exitBtn.Text = "&Exit";
             this.exitBtn.UseVisualStyleBackColor = false;
             // 
             // Form1

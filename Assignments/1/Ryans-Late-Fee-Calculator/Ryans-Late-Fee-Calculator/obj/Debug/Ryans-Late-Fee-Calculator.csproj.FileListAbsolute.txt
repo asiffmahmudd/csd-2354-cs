@@ -1,0 +1,11 @@
+D:\Lambton\Term-2\CSD-2354-C#\Assignments\1\Ryans-Late-Fee-Calculator\Ryans-Late-Fee-Calculator\bin\Debug\Ryans-Late-Fee-Calculator.exe.config
+D:\Lambton\Term-2\CSD-2354-C#\Assignments\1\Ryans-Late-Fee-Calculator\Ryans-Late-Fee-Calculator\bin\Debug\Ryans-Late-Fee-Calculator.exe
+D:\Lambton\Term-2\CSD-2354-C#\Assignments\1\Ryans-Late-Fee-Calculator\Ryans-Late-Fee-Calculator\bin\Debug\Ryans-Late-Fee-Calculator.pdb
+D:\Lambton\Term-2\CSD-2354-C#\Assignments\1\Ryans-Late-Fee-Calculator\Ryans-Late-Fee-Calculator\obj\Debug\Ryans-Late-Fee-Calculator.csproj.AssemblyReference.cache
+D:\Lambton\Term-2\CSD-2354-C#\Assignments\1\Ryans-Late-Fee-Calculator\Ryans-Late-Fee-Calculator\obj\Debug\Ryans-Late-Fee-Calculator.csproj.SuggestedBindingRedirects.cache
+D:\Lambton\Term-2\CSD-2354-C#\Assignments\1\Ryans-Late-Fee-Calculator\Ryans-Late-Fee-Calculator\obj\Debug\Ryans_Late_Fee_Calculator.Properties.Resources.resources
+D:\Lambton\Term-2\CSD-2354-C#\Assignments\1\Ryans-Late-Fee-Calculator\Ryans-Late-Fee-Calculator\obj\Debug\Ryans-Late-Fee-Calculator.csproj.GenerateResource.cache
+D:\Lambton\Term-2\CSD-2354-C#\Assignments\1\Ryans-Late-Fee-Calculator\Ryans-Late-Fee-Calculator\obj\Debug\Ryans-Late-Fee-Calculator.csproj.CoreCompileInputs.cache
+D:\Lambton\Term-2\CSD-2354-C#\Assignments\1\Ryans-Late-Fee-Calculator\Ryans-Late-Fee-Calculator\obj\Debug\Ryans-Late-Fee-Calculator.exe
+D:\Lambton\Term-2\CSD-2354-C#\Assignments\1\Ryans-Late-Fee-Calculator\Ryans-Late-Fee-Calculator\obj\Debug\Ryans-Late-Fee-Calculator.pdb
+D:\Lambton\Term-2\CSD-2354-C#\Assignments\1\Ryans-Late-Fee-Calculator\Ryans-Late-Fee-Calculator\obj\Debug\Ryans_Late_Fee_Calculator.mainMenu.resources
