@@ -46,6 +46,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="KidsMovie.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="KidsMovie.Designer.cs">
+      <DependentUpon>KidsMovie.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LibraryMovie.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LibraryMovie.Designer.cs">
+      <DependentUpon>LibraryMovie.cs</DependentUpon>
+    </Compile>
     <Compile Include="MainMenu.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -60,6 +72,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="KidsMovie.resx">
+      <DependentUpon>KidsMovie.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LibraryMovie.resx">
+      <DependentUpon>LibraryMovie.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MainMenu.resx">
       <DependentUpon>MainMenu.cs</DependentUpon>
     </EmbeddedResource>
@@ -75,6 +93,11 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <None Include="Properties\DataSources\mainMenu.datasource" />
+    <None Include="Properties\DataSources\newRelease.datasource" />
+    <None Include="Properties\DataSources\Program.datasource" />
+    <None Include="Properties\DataSources\Ryans_Late_Fee_Calculator.Properties.Resources.datasource" />
+    <None Include="Properties\DataSources\Ryans_Late_Fee_Calculator.Properties.Settings.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

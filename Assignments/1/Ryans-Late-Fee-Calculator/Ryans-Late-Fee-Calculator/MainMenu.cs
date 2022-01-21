@@ -17,34 +17,27 @@ namespace Ryans_Late_Fee_Calculator
             InitializeComponent();
         }
 
-        private void flowLayoutPanel1_Paint(object sender, PaintEventArgs e)
+        private void btnNewRelease_Click(object sender, EventArgs e)
         {
-
+            newRelease obj = new newRelease();
+            obj.Show();
         }
 
-        private void label1_Click(object sender, EventArgs e)
+        private void btnKidsMovie_Click(object sender, EventArgs e)
         {
-
+            KidsMovie obj = new KidsMovie();
+            obj.Show();
         }
 
-        private void pictureBox1_Click(object sender, EventArgs e)
+        private void btnLibraryMovie_Click(object sender, EventArgs e)
         {
-
+            LibraryMovie obj = new LibraryMovie();
+            obj.Show();
         }
 
-        private void pictureBox1_Click_1(object sender, EventArgs e)
+        private void btnExit_Click(object sender, EventArgs e)
         {
-
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button3_Click(object sender, EventArgs e)
-        {
-
+            this.Close();
         }
     }
 }

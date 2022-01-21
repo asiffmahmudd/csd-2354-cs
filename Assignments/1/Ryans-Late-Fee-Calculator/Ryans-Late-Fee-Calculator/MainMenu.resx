@@ -121,7 +121,7 @@
   <data name="btnExit.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6
-        JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAACXBIWXMAAAsOAAALDgFAvuFBAAAAB3RJ
+        JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAACXBIWXMAAAsMAAALDAE/QCLIAAAAB3RJ
         TUUH5gETAi0NLhpxwgAABl9JREFUSEvVVnlQlHUYfh08KmesPJoUGxWayRkTU5O0cvqjBkcDNUp0vNA/
         KJkmZzLTEfMgDCcd5ApTUJqaUhsMhby4d7nPBYRlOXeX3YU92PsGFHp+Hx8IBePa8UfPzDvf7ne8z++9
         X2JQKBQkFotJJpORVCr9x+IxhAVCKhIWk9Vk4+8QhX8RNon/OQZzfJ/jroODgxOKx6ipFpGoWjTDqDdG
@@ -221,10 +221,10 @@
         7AAAAABJRU5ErkJggg==
 </value>
   </data>
-  <data name="pictureBox1.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="calculatorImage.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAPQAAAFLCAYAAADhxKHqAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        vwAADr8BOAVTJAAAaP9JREFUeF7tnQdgTef7x/3+HTqpDrRVito7FKX2LNqqUrRGbBKrilJqt2YSqzqM
+        vQAADr0BR/uQrQAAaP9JREFUeF7tnQdgTef7x/3+HTqpDrRVito7FKX2LNqqUrRGbBKrilJqt2YSqzqM
         qlpVapSgaKktImZsMYLITm6Su3P+z/c975vcGzcquefe3Hucjz69N/ec887n+66z8nkrTxLPEgWJl4jC
         xKvEG0RJoixRiahG1CRqccT36kQFAvu/SDxPPMd5gXiZKEoUJ0oTFQmEheNqcERYtYm3CfyGMLE/wsXx
         CCs/8RjxPwKfTxBPE4izEIG0lyDKEUhzFaIqgU+A74gbn+WJUsRrBPL9DCHC5kVjB35/ikAcSNNbBPKC

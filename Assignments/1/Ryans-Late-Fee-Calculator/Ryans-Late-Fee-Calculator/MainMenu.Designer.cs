@@ -36,9 +36,9 @@
             this.btnNewRelease = new System.Windows.Forms.Button();
             this.title = new System.Windows.Forms.Label();
             this.subtitle = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.calculatorImage = new System.Windows.Forms.PictureBox();
             this.btnContainer.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.calculatorImage)).BeginInit();
             this.SuspendLayout();
             // 
             // btnContainer
@@ -67,9 +67,10 @@
             this.btnExit.Name = "btnExit";
             this.btnExit.Padding = new System.Windows.Forms.Padding(30, 0, 0, 0);
             this.btnExit.Size = new System.Drawing.Size(269, 66);
-            this.btnExit.TabIndex = 7;
-            this.btnExit.Text = "Exit The App";
+            this.btnExit.TabIndex = 6;
+            this.btnExit.Text = "E&xit The App";
             this.btnExit.UseVisualStyleBackColor = false;
+            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
             // btnKidsMovie
             // 
@@ -83,10 +84,10 @@
             this.btnKidsMovie.Name = "btnKidsMovie";
             this.btnKidsMovie.Padding = new System.Windows.Forms.Padding(30, 0, 0, 0);
             this.btnKidsMovie.Size = new System.Drawing.Size(269, 68);
-            this.btnKidsMovie.TabIndex = 6;
-            this.btnKidsMovie.Text = "Kid\'s Movie";
+            this.btnKidsMovie.TabIndex = 5;
+            this.btnKidsMovie.Text = "&Kid\'s Movie";
             this.btnKidsMovie.UseVisualStyleBackColor = false;
-            this.btnKidsMovie.Click += new System.EventHandler(this.button3_Click);
+            this.btnKidsMovie.Click += new System.EventHandler(this.btnKidsMovie_Click);
             // 
             // btnLibraryMovie
             // 
@@ -100,9 +101,10 @@
             this.btnLibraryMovie.Name = "btnLibraryMovie";
             this.btnLibraryMovie.Padding = new System.Windows.Forms.Padding(30, 0, 0, 0);
             this.btnLibraryMovie.Size = new System.Drawing.Size(269, 67);
-            this.btnLibraryMovie.TabIndex = 5;
-            this.btnLibraryMovie.Text = "Library Movie";
+            this.btnLibraryMovie.TabIndex = 4;
+            this.btnLibraryMovie.Text = "&Library Movie";
             this.btnLibraryMovie.UseVisualStyleBackColor = false;
+            this.btnLibraryMovie.Click += new System.EventHandler(this.btnLibraryMovie_Click);
             // 
             // btnNewRelease
             // 
@@ -116,10 +118,10 @@
             this.btnNewRelease.Name = "btnNewRelease";
             this.btnNewRelease.Padding = new System.Windows.Forms.Padding(30, 10, 0, 10);
             this.btnNewRelease.Size = new System.Drawing.Size(269, 64);
-            this.btnNewRelease.TabIndex = 4;
-            this.btnNewRelease.Text = "New Release";
+            this.btnNewRelease.TabIndex = 3;
+            this.btnNewRelease.Text = "&New Release";
             this.btnNewRelease.UseVisualStyleBackColor = false;
-            this.btnNewRelease.Click += new System.EventHandler(this.button1_Click);
+            this.btnNewRelease.Click += new System.EventHandler(this.btnNewRelease_Click);
             // 
             // title
             // 
@@ -144,20 +146,18 @@
             this.subtitle.Size = new System.Drawing.Size(378, 30);
             this.subtitle.TabIndex = 1;
             this.subtitle.Text = "Calculate your due fees in no time";
-            this.subtitle.Click += new System.EventHandler(this.label1_Click);
             // 
-            // pictureBox1
+            // calculatorImage
             // 
-            this.pictureBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(13)))), ((int)(((byte)(13)))));
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(37, 186);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(233, 297);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 3;
-            this.pictureBox1.TabStop = false;
-            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click_1);
+            this.calculatorImage.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(13)))), ((int)(((byte)(13)))));
+            this.calculatorImage.Image = ((System.Drawing.Image)(resources.GetObject("calculatorImage.Image")));
+            this.calculatorImage.Location = new System.Drawing.Point(36, 213);
+            this.calculatorImage.Margin = new System.Windows.Forms.Padding(4);
+            this.calculatorImage.Name = "calculatorImage";
+            this.calculatorImage.Size = new System.Drawing.Size(233, 297);
+            this.calculatorImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.calculatorImage.TabIndex = 3;
+            this.calculatorImage.TabStop = false;
             // 
             // mainMenu
             // 
@@ -167,7 +167,7 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.CancelButton = this.btnExit;
             this.ClientSize = new System.Drawing.Size(964, 615);
-            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.calculatorImage);
             this.Controls.Add(this.subtitle);
             this.Controls.Add(this.title);
             this.Controls.Add(this.btnContainer);
@@ -177,7 +177,7 @@
             this.Name = "mainMenu";
             this.Text = "Ryan\'s Late Fee Calculator";
             this.btnContainer.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.calculatorImage)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -188,7 +188,7 @@
         private System.Windows.Forms.Panel btnContainer;
         private System.Windows.Forms.Label title;
         private System.Windows.Forms.Label subtitle;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox calculatorImage;
         private System.Windows.Forms.Button btnNewRelease;
         private System.Windows.Forms.Button btnExit;
         private System.Windows.Forms.Button btnKidsMovie;
