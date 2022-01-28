@@ -1,6 +1,6 @@
 ﻿namespace Ryans_Late_Fee_Calculator
 {
-    partial class LibraryMovie
+    partial class calculateFee
     {
         /// <summary>
         /// Required designer variable.
@@ -20,15 +20,18 @@
             base.Dispose(disposing);
         }
 
-        #region Windows Form Designer generated code
+            #region Windows Form Designer generated code
 
-        /// <summary>
-        /// Required method for Designer support - do not modify
-        /// the contents of this method with the code editor.
-        /// </summary>
-        private void InitializeComponent()
+            /// <summary>
+            /// Required method for Designer support - do not modify
+            /// the contents of this method with the code editor.
+            /// </summary>
+            private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LibraryMovie));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(calculateFee));
+            this.title = new System.Windows.Forms.Label();
+            this.calculatorImage = new System.Windows.Forms.PictureBox();
+            this.subtitle = new System.Windows.Forms.Label();
             this.btnContainer = new System.Windows.Forms.Panel();
             this.dueDate = new System.Windows.Forms.TextBox();
             this.btnReturn = new System.Windows.Forms.Button();
@@ -40,12 +43,46 @@
             this.numberOfDaysLate = new System.Windows.Forms.TextBox();
             this.labelCurrentDate = new System.Windows.Forms.Label();
             this.labelDueDate = new System.Windows.Forms.Label();
-            this.calculatorImage = new System.Windows.Forms.PictureBox();
-            this.subtitle = new System.Windows.Forms.Label();
-            this.title = new System.Windows.Forms.Label();
-            this.btnContainer.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.calculatorImage)).BeginInit();
+            this.btnContainer.SuspendLayout();
             this.SuspendLayout();
+            // 
+            // title
+            // 
+            this.title.AutoSize = true;
+            this.title.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(13)))), ((int)(((byte)(13)))));
+            this.title.Font = new System.Drawing.Font("Open Sans ExtraBold", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.title.ForeColor = System.Drawing.Color.White;
+            this.title.Location = new System.Drawing.Point(29, 71);
+            this.title.Name = "title";
+            this.title.Size = new System.Drawing.Size(373, 41);
+            this.title.TabIndex = 0;
+            this.title.Text = "New Releases ($2/Day)";
+            this.title.Click += new System.EventHandler(this.title_Click);
+            // 
+            // calculatorImage
+            // 
+            this.calculatorImage.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(13)))), ((int)(((byte)(13)))));
+            this.calculatorImage.Image = ((System.Drawing.Image)(resources.GetObject("calculatorImage.Image")));
+            this.calculatorImage.Location = new System.Drawing.Point(36, 213);
+            this.calculatorImage.Margin = new System.Windows.Forms.Padding(4);
+            this.calculatorImage.Name = "calculatorImage";
+            this.calculatorImage.Size = new System.Drawing.Size(233, 297);
+            this.calculatorImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.calculatorImage.TabIndex = 5;
+            this.calculatorImage.TabStop = false;
+            // 
+            // subtitle
+            // 
+            this.subtitle.AutoSize = true;
+            this.subtitle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(13)))), ((int)(((byte)(13)))));
+            this.subtitle.Font = new System.Drawing.Font("Open Sans SemiBold", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.subtitle.ForeColor = System.Drawing.Color.White;
+            this.subtitle.Location = new System.Drawing.Point(32, 129);
+            this.subtitle.Name = "subtitle";
+            this.subtitle.Size = new System.Drawing.Size(319, 30);
+            this.subtitle.TabIndex = 1;
+            this.subtitle.Text = "Calculate your due fees here";
             // 
             // btnContainer
             // 
@@ -64,7 +101,7 @@
             this.btnContainer.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnContainer.Name = "btnContainer";
             this.btnContainer.Size = new System.Drawing.Size(408, 471);
-            this.btnContainer.TabIndex = 8;
+            this.btnContainer.TabIndex = 2;
             // 
             // dueDate
             // 
@@ -169,45 +206,9 @@
             this.labelDueDate.Name = "labelDueDate";
             this.labelDueDate.Size = new System.Drawing.Size(223, 24);
             this.labelDueDate.TabIndex = 3;
-            this.labelDueDate.Text = "Due Date (mm/dd/yyyy)";
+            this.labelDueDate.Text = "&Due Date (mm/dd/yyyy)";
             // 
-            // calculatorImage
-            // 
-            this.calculatorImage.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(13)))), ((int)(((byte)(13)))));
-            this.calculatorImage.Image = ((System.Drawing.Image)(resources.GetObject("calculatorImage.Image")));
-            this.calculatorImage.Location = new System.Drawing.Point(36, 213);
-            this.calculatorImage.Margin = new System.Windows.Forms.Padding(4);
-            this.calculatorImage.Name = "calculatorImage";
-            this.calculatorImage.Size = new System.Drawing.Size(233, 297);
-            this.calculatorImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.calculatorImage.TabIndex = 9;
-            this.calculatorImage.TabStop = false;
-            // 
-            // subtitle
-            // 
-            this.subtitle.AutoSize = true;
-            this.subtitle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(13)))), ((int)(((byte)(13)))));
-            this.subtitle.Font = new System.Drawing.Font("Open Sans SemiBold", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.subtitle.ForeColor = System.Drawing.Color.White;
-            this.subtitle.Location = new System.Drawing.Point(32, 129);
-            this.subtitle.Name = "subtitle";
-            this.subtitle.Size = new System.Drawing.Size(319, 30);
-            this.subtitle.TabIndex = 7;
-            this.subtitle.Text = "Calculate your due fees here";
-            // 
-            // title
-            // 
-            this.title.AutoSize = true;
-            this.title.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(13)))), ((int)(((byte)(13)))));
-            this.title.Font = new System.Drawing.Font("Open Sans ExtraBold", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.title.ForeColor = System.Drawing.Color.White;
-            this.title.Location = new System.Drawing.Point(29, 71);
-            this.title.Name = "title";
-            this.title.Size = new System.Drawing.Size(415, 41);
-            this.title.TabIndex = 6;
-            this.title.Text = "Library Movie ($0.57/Day)";
-            // 
-            // LibraryMovie
+            // calculateFee
             // 
             this.AcceptButton = this.btnCalculate;
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -220,11 +221,11 @@
             this.Controls.Add(this.subtitle);
             this.Controls.Add(this.title);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Name = "LibraryMovie";
-            this.Text = "Library Movie";
+            this.Name = "calculateFee";
+            this.Text = "New Release";
+            ((System.ComponentModel.ISupportInitialize)(this.calculatorImage)).EndInit();
             this.btnContainer.ResumeLayout(false);
             this.btnContainer.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.calculatorImage)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -232,9 +233,11 @@
 
         #endregion
 
+        private System.Windows.Forms.Label title;
+        private System.Windows.Forms.PictureBox calculatorImage;
+        private System.Windows.Forms.Label subtitle;
         private System.Windows.Forms.Panel btnContainer;
-        private System.Windows.Forms.TextBox dueDate;
-        private System.Windows.Forms.Button btnReturn;
+        private System.Windows.Forms.Label labelDueDate;
         private System.Windows.Forms.Button btnCalculate;
         private System.Windows.Forms.TextBox lateFee;
         private System.Windows.Forms.Label labelLateFee;
@@ -242,9 +245,10 @@
         private System.Windows.Forms.Label labelNumberOfDaysLate;
         private System.Windows.Forms.TextBox numberOfDaysLate;
         private System.Windows.Forms.Label labelCurrentDate;
-        private System.Windows.Forms.Label labelDueDate;
-        private System.Windows.Forms.PictureBox calculatorImage;
-        private System.Windows.Forms.Label subtitle;
-        private System.Windows.Forms.Label title;
+        private System.Windows.Forms.Button btnReturn;
+        private System.Windows.Forms.TextBox dueDate;
+
+        // btn handlers
+
     }
 }

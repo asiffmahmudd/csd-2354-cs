@@ -5,6 +5,11 @@
       "ProjectGuid": "7593c8ce-22d1-4cfa-95d0-097e5f75c7bb",
       "DisplayName": "Ryans-Late-Fee-Calculator",
       "ColorIndex": 0
+    },
+    "a2fe74e1-b743-11d0-ae1a-00a0c90fffc3": {
+      "ProjectGuid": "a2fe74e1-b743-11d0-ae1a-00a0c90fffc3",
+      "DisplayName": "Miscellaneous Files",
+      "ColorIndex": -1
     }
   },
   "NextColorIndex": 1
