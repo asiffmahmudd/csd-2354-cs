@@ -97,9 +97,5 @@ namespace Ryans_Late_Fee_Calculator
             this.Hide();  // closing the current form
         }
 
-        private void title_Click(object sender, EventArgs e)
-        {
-
-        }
     }
 }
