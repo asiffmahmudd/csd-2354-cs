@@ -8,93 +8,156 @@ using System.Windows.Forms;
 
 namespace Ryans_Late_Fee_Calculator
 {
-    public partial class calculateFee : Form
+    public partial class CalculateFee : Form
     {
-        private double lateFeeRate;
-        public calculateFee()
+        private double lateFeeRate; // variable for late fee of the form
+        private string formType;
+        public CalculateFee(string formType, int moviesCount, double lateFee, string titleText)
         {
             InitializeComponent();
             this.currentDate.Text = DateTime.Now.ToString("MM/dd/yyyy");  //getting today's date and changing the value of current day field
             this.btnCalculate = new System.Windows.Forms.Button();
             this.btnReturn = new System.Windows.Forms.Button();
-        }
-
-        public void setLateFee(double lateFee, String titleText) 
-        {
+            this.numberOfMoviesCalculated.Text = moviesCount.ToString();
+            this.formType = formType;
             this.lateFeeRate = lateFee;
             title.Text = titleText;
         }
 
-        private DateTime getDueDate()
-        {
-            String dueDateValue = this.dueDate.Text;
-                
-            if(dueDateValue.IndexOf('/') > 0)  //checking if the date contains slash, otherwise the format is wrong
-            {
-                String[] s = dueDateValue.Split('/'); // splitting the string with '/' delimeter to get month, day and year
-                if(s.Length == 3)  // if the string's length is not 3 (mm/dd/yyyy) then it's a wrong date
-                {
-                    int day, month, year;
-                    bool isNumberValid = int.TryParse(s[1], out day);
-                    if (isNumberValid && day >= 1 && day <= 31)  // validating day of the date
-                    {
-                        isNumberValid = int.TryParse(s[0], out month);
-                        if(isNumberValid && month >= 1 && month <= 12)  // validating month of the date
-                        {
-                            isNumberValid = int.TryParse(s[2], out year);
 
-                            if (isNumberValid && year <= DateTime.Now.Year)  // checking if the year is valid
-                            {
-                                DateTime resultDate;
-                                String dateString = year+ "/" + month + "/" + day;
-                                if(DateTime.TryParse(dateString, out resultDate))
-                                {
-                                    if (DateTime.Now >= resultDate)  // validating the whole date
-                                    {
-                                        return resultDate;  // returning a valid date
-                                    }
-                                }
-                            }
-                        }
-                    }
-                }
+        private double CalculateDiscount(string customerType, double totalFee)
+        {
+            if(customerType == "J")
+            {
+                totalFee -=  totalFee * 0.05;
             }
-            return new DateTime(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day+1);  
-            // returning a larger date than the current date to mark it as invalid
+            else if(customerType == "L")
+            {
+                totalFee -= totalFee * 0.10;
+            }
+            return totalFee;
+        }
+
+        private void setNumberOfMoviesCalculated(int numberOfMovies)
+        {
+            int movieCount = 0;
+            if(formType == MainMenu.typeNewRelease)
+            {
+                MainMenu.newReleasedMoviesCount += numberOfMovies;
+                movieCount = MainMenu.newReleasedMoviesCount;
+            }
+            else if (formType == MainMenu.typeLibraryMovies)
+            {
+                MainMenu.libraryMoviesCount += numberOfMovies;
+                movieCount = MainMenu.libraryMoviesCount;
+            }
+            else if (formType == MainMenu.typeKidsMovies)
+            {
+                MainMenu.kidsMoviesCount += numberOfMovies;
+                movieCount = MainMenu.kidsMoviesCount;
+            }
+            this.numberOfMoviesCalculated.Text = movieCount.ToString();
+        }
+
+        private void setLateFee(int dayDifference, int numberOfMovies, string customerType)
+        {
+            double totalFee = dayDifference * numberOfMovies * this.lateFeeRate;  // calculating totalFee
+            totalFee = CalculateDiscount(customerType, totalFee);
+            this.lateFee.Text = totalFee.ToString("c");  // changing the textbox value of late fee
+        }
+
+        private int setAndGetNumberOfDaysLate(DateTime currentDate, DateTime dueDate)
+        {
+            int dayDifference = (int)(currentDate - dueDate).TotalDays;  // storing the difference in a variable
+            this.numberOfDaysLate.Text = dayDifference.ToString();  // changing the textbox value of number of days late
+            return dayDifference;
+        }
+
+        private void CalculateAndSetTextBox(DateTime dueDate, DateTime currentDate, int numberOfMovies, string customerType)
+        {
+            DateTime resultDate; // variable for storing the input
+
+            int dayDifference = setAndGetNumberOfDaysLate(currentDate, dueDate);
+            setLateFee(dayDifference, numberOfMovies, customerType);
+
+            setNumberOfMoviesCalculated(numberOfMovies);
+        }
+
+        //method for clearing the text boxes
+        private void ClearTextBoxes()
+        {
+            this.numberOfDaysLate.Text = "";
+            this.lateFee.Text = "";
+        }
+
+        private void ClearUserInput()
+        {
+            this.dueDate.Text = "";
+            this.numberOfMovies.Text = "";
+            this.customerType.Text = "";
+        }
+
+        private void SetErrorMsg(bool valid, Label obj, string errorMsg)
+        {
+            if (!valid) // checking validity
+            {
+                obj.Text = errorMsg; // setting error message
+                obj.Visible = true; // showing error message
+            }
         }
 
         private void btnCalculate_Click(object sender, EventArgs e)
         {
             var currentDate = DateTime.Now;  // getting the current date 
-
-            String dueDateValue = this.dueDate.Text;
             
-            if (dueDateValue == "")     // checking if the field is empty
+            string dueDateValue = this.dueDate.Text; // getting user input
+            bool isDueDateValid = Validator.IsDueDateValid(dueDateValue, out DateTime dueDate, out string errorMsgDueDate); // checking validity
+
+            string numberOfMoviesValue = this.numberOfMovies.Text; // getting user input
+            bool isNumberOfMoviesValid = Validator.IsInt(numberOfMoviesValue, 
+                out int numberOfMovies, "Number of Movies", out string errorMsgNumberOfMovies); // checking validity
+
+            string customerType = this.customerType.Text; // getting user input
+            bool isCustomerTypeValid = Validator.IsCustomerTypeValid(customerType, out string errorMsgCustomerType); // checking validity
+
+            if (isDueDateValid && isNumberOfMoviesValid && isCustomerTypeValid)  //validating the date input using Validator class                             
             {
-                MessageBox.Show("Current date can't be empty");
+                CalculateAndSetTextBox(dueDate, currentDate, numberOfMovies, customerType);
+                this.btnReturn.Focus();
             }
-            else
+            else 
             {
-                DateTime resultDate = getDueDate();                         
-                if(resultDate > DateTime.Now)                               
-                {
-                    MessageBox.Show("Invalid Date");
-                    this.numberOfDaysLate.Text = "";
-                    this.lateFee.Text = "";
-                }
-                else 
-                {
-                    int dayDifference = (int)(currentDate - resultDate).TotalDays;  // storing the difference in a variable
-                    this.numberOfDaysLate.Text = dayDifference.ToString();  // changing the textbox value of number of days late
-                    double totalFee = dayDifference * this.lateFeeRate;  // calculating totalFee
-                    this.lateFee.Text = totalFee.ToString("c");  // changing the textbox value of late fee
-                }
+                //setting error message for the particular fields
+                SetErrorMsg(isDueDateValid, this.labelErrorDueDate, errorMsgDueDate);
+                SetErrorMsg(isNumberOfMoviesValid, this.labelErrorNumberOfMovies, errorMsgNumberOfMovies);
+                SetErrorMsg(isCustomerTypeValid, this.labelErrorCustomerType, errorMsgCustomerType);
+                //clearing the fields if an error is found
+                ClearTextBoxes();
             }
         }
 
+        //event handler for return button
         private void btnReturn_Click(object sender, EventArgs e)
         {
+            ClearTextBoxes(); // clearing the text boxes
+            ClearUserInput(); // clearing the text boxes
             this.Hide();  // closing the current form
+        }
+
+        // event handler for text change in due date
+        private void dueDate_TextChanged(object sender, EventArgs e)
+        {
+            this.labelErrorDueDate.Visible = false;
+        }
+        // event handler for text change in number of movies
+        private void numberOfMovies_TextChanged(object sender, EventArgs e)
+        {
+            this.labelErrorNumberOfMovies.Visible = false;
+        }
+        // event handler for text change in customer type
+        private void customerType_TextChanged(object sender, EventArgs e)
+        {
+            this.labelErrorCustomerType.Visible = false;
         }
 
     }

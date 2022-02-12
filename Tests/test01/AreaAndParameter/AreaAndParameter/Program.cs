@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Ryans_Late_Fee_Calculator
+namespace AreaAndParameter
 {
     internal static class Program
     {
@@ -16,7 +16,7 @@ namespace Ryans_Late_Fee_Calculator
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new MainMenu());
+            Application.Run(new areaAndParameter());
         }
     }
 }

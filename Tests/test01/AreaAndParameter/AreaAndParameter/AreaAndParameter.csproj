@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{7593C8CE-22D1-4CFA-95D0-097E5F75C7BB}</ProjectGuid>
+    <ProjectGuid>{8B1090A6-374E-49B5-A1D5-8EABE9062EC7}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <RootNamespace>Ryans_Late_Fee_Calculator</RootNamespace>
-    <AssemblyName>Ryans-Late-Fee-Calculator</AssemblyName>
+    <RootNamespace>AreaAndParameter</RootNamespace>
+    <AssemblyName>AreaAndParameter</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -46,26 +46,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Validator.cs" />
-    <Compile Include="MainMenu.cs">
+    <Compile Include="AreaAndParamter.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="MainMenu.Designer.cs">
-      <DependentUpon>MainMenu.cs</DependentUpon>
-    </Compile>
-    <Compile Include="CalculateFee.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="CalculateFee.Designer.cs">
-      <DependentUpon>CalculateFee.cs</DependentUpon>
+    <Compile Include="AreaAndParamter.Designer.cs">
+      <DependentUpon>AreaAndParamter.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="MainMenu.resx">
-      <DependentUpon>MainMenu.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="CalculateFee.resx">
-      <DependentUpon>CalculateFee.cs</DependentUpon>
+    <EmbeddedResource Include="AreaAndParamter.resx">
+      <DependentUpon>AreaAndParamter.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -76,11 +66,6 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <None Include="Properties\DataSources\mainMenu.datasource" />
-    <None Include="Properties\DataSources\newRelease.datasource" />
-    <None Include="Properties\DataSources\Program.datasource" />
-    <None Include="Properties\DataSources\Ryans_Late_Fee_Calculator.Properties.Resources.datasource" />
-    <None Include="Properties\DataSources\Ryans_Late_Fee_Calculator.Properties.Settings.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

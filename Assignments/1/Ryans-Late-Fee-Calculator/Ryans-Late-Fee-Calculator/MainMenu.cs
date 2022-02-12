@@ -15,33 +15,46 @@ using System.Windows.Forms;
 
 namespace Ryans_Late_Fee_Calculator
 {
-    public partial class mainMenu : Form
+    public partial class MainMenu : Form
     {
-        calculateFee newReleaseObj;
-        calculateFee libraryObj;
-        calculateFee kidsObj;
-        public mainMenu()
+        // declaring variables for three forms
+        CalculateFee newReleaseObj; 
+        CalculateFee libraryObj;
+        CalculateFee kidsObj;
+
+        public static int newReleasedMoviesCount = 0;
+        public static int libraryMoviesCount = 0;
+        public static int kidsMoviesCount = 0;
+
+        public static string typeNewRelease = "New Release";
+        public static string typeLibraryMovies = "Library Movies";
+        public static string typeKidsMovies = "Kid's Movies";
+
+        private double newReleaseRate = 2.00;
+        private double libraryMoviesRate = 0.57;
+        private double kidMoviesRate = 0.15;
+        public MainMenu()
         {
-            newReleaseObj = new calculateFee();
-            libraryObj = new calculateFee();
-            kidsObj = new calculateFee();
+            // creating objects and assigning them to the variables
+            newReleaseObj = new CalculateFee(typeNewRelease, newReleasedMoviesCount, newReleaseRate, typeNewRelease + " ($" + newReleaseRate + "/day)");
+            libraryObj = new CalculateFee(typeLibraryMovies, libraryMoviesCount, libraryMoviesRate, typeLibraryMovies + " ($" + libraryMoviesRate + "/day)");
+            kidsObj = new CalculateFee(typeKidsMovies, kidsMoviesCount, kidMoviesRate, typeKidsMovies + " ($" + kidMoviesRate + "/day)");
             InitializeComponent();
         }
 
+        //method for new realeas button click
         private void btnNewRelease_Click(object sender, EventArgs e)
         {
             try
             {
-                double lateFee = 2.00;
-                newReleaseObj.setLateFee(lateFee, "New Release ($" + lateFee + "/day)");
-                newReleaseObj.Show();
+                newReleaseObj.Show(); // showing the form 
             }
-            catch(System.ObjectDisposedException odEx)
+            catch(System.ObjectDisposedException) // exception if the object is disposed already 
             {
-                newReleaseObj = new calculateFee();
+                newReleaseObj = new CalculateFee(typeNewRelease, newReleasedMoviesCount, newReleaseRate, typeNewRelease + " ($" + newReleaseRate + "/day)");
                 newReleaseObj.Show();
             }
-            catch (Exception ex)
+            catch (Exception ex) // exception for other errors
             {
                 var msg = ex.Message;
                 Console.WriteLine(msg);
@@ -52,16 +65,14 @@ namespace Ryans_Late_Fee_Calculator
         {
             try
             {
-                double lateFee = 0.15;
-                libraryObj.setLateFee(lateFee, "Kid's Movie ($" + lateFee + "/day)");
-                libraryObj.Show();
+                kidsObj.Show();  // showing the form
             }
-            catch (System.ObjectDisposedException odEx)
+            catch (System.ObjectDisposedException) // exception if the object is disposed already 
             {
-                libraryObj = new calculateFee();
-                libraryObj.Show();
+                kidsObj = new CalculateFee(typeKidsMovies, kidsMoviesCount, kidMoviesRate, typeKidsMovies + " ($" + kidMoviesRate + "/day)");
+                kidsObj.Show();
             }
-            catch (Exception ex)
+            catch (Exception ex) // exception for other errors
             {
                 var msg = ex.Message;
                 Console.WriteLine(msg);
@@ -72,22 +83,20 @@ namespace Ryans_Late_Fee_Calculator
         {
             try
             {
-                double lateFee = 0.57;
-                kidsObj.setLateFee(lateFee, "Library Movie ($" + lateFee + "/day)");
-                kidsObj.Show();
+                libraryObj.Show();  // showing the form
             }
-            catch (System.ObjectDisposedException odEx)
+            catch (System.ObjectDisposedException) // exception if the object is disposed already 
             {
-                kidsObj = new calculateFee();
-                kidsObj.Show();
+                libraryObj = new CalculateFee(typeLibraryMovies, libraryMoviesCount, libraryMoviesRate, typeLibraryMovies + " ($" + libraryMoviesRate + "/day)");
+                libraryObj.Show();
             }
-            catch (Exception ex)
+            catch (Exception ex) // exception for other errors
             {
                 var msg = ex.Message;
                 Console.WriteLine(msg);
             }
         }
-
+        // event handler for exit button click
         private void btnExit_Click(object sender, EventArgs e)
         {
             this.Close();

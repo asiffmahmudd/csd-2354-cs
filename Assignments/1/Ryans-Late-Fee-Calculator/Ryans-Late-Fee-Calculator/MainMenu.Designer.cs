@@ -1,6 +1,6 @@
 ﻿namespace Ryans_Late_Fee_Calculator
 {
-    partial class mainMenu
+    partial class MainMenu
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(mainMenu));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainMenu));
             this.btnContainer = new System.Windows.Forms.Panel();
             this.btnExit = new System.Windows.Forms.Button();
             this.btnKidsMovie = new System.Windows.Forms.Button();
@@ -159,7 +159,7 @@
             this.calculatorImage.TabIndex = 3;
             this.calculatorImage.TabStop = false;
             // 
-            // mainMenu
+            // MainMenu
             // 
             this.AcceptButton = this.btnNewRelease;
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -175,7 +175,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.Name = "mainMenu";
+            this.Name = "MainMenu";
             this.Text = "Ryan\'s Late Fee Calculator";
             this.btnContainer.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.calculatorImage)).EndInit();
