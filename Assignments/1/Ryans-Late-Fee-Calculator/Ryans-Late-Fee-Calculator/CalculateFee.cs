@@ -123,6 +123,7 @@ namespace Ryans_Late_Fee_Calculator
             if (isDueDateValid && isNumberOfMoviesValid && isCustomerTypeValid)  //validating the date input using Validator class                             
             {
                 CalculateAndSetTextBox(dueDate, currentDate, numberOfMovies, customerType);
+                
                 this.btnReturn.Focus();
             }
             else 
