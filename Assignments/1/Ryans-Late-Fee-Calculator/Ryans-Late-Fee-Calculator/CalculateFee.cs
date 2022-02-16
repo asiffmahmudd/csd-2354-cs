@@ -1,7 +1,7 @@
 ﻿/*
     Name: Asif Mahmud
     ID: C083711
-    Assignment: 01
+    Assignment: 02
 */
 using System;
 using System.Windows.Forms;
@@ -16,8 +16,6 @@ namespace Ryans_Late_Fee_Calculator
         {
             InitializeComponent();
             this.currentDate.Text = DateTime.Now.ToString("MM/dd/yyyy");  //getting today's date and changing the value of current day field
-            this.btnCalculate = new System.Windows.Forms.Button();
-            this.btnReturn = new System.Windows.Forms.Button();
             this.numberOfMoviesCalculated.Text = moviesCount.ToString();
             this.formType = formType;
             this.lateFeeRate = lateFee;
@@ -75,8 +73,6 @@ namespace Ryans_Late_Fee_Calculator
 
         private void CalculateAndSetTextBox(DateTime dueDate, DateTime currentDate, int numberOfMovies, string customerType)
         {
-            DateTime resultDate; // variable for storing the input
-
             int dayDifference = setAndGetNumberOfDaysLate(currentDate, dueDate);
             setLateFee(dayDifference, numberOfMovies, customerType);
 
@@ -90,6 +86,7 @@ namespace Ryans_Late_Fee_Calculator
             this.lateFee.Text = "";
         }
 
+        //method for clearing the input fields
         private void ClearUserInput()
         {
             this.dueDate.Text = "";
@@ -97,6 +94,14 @@ namespace Ryans_Late_Fee_Calculator
             this.customerType.Text = "";
         }
 
+        private void ClearErrorMessage()
+        {
+            this.labelErrorCustomerType.Text = "";
+            this.labelErrorDueDate.Text = "";
+            this.labelErrorNumberOfMovies.Text = "";
+        }
+
+        //method for setting error message
         private void SetErrorMsg(bool valid, Label obj, string errorMsg)
         {
             if (!valid) // checking validity
@@ -123,7 +128,6 @@ namespace Ryans_Late_Fee_Calculator
             if (isDueDateValid && isNumberOfMoviesValid && isCustomerTypeValid)  //validating the date input using Validator class                             
             {
                 CalculateAndSetTextBox(dueDate, currentDate, numberOfMovies, customerType);
-                
                 this.btnReturn.Focus();
             }
             else 
@@ -142,6 +146,8 @@ namespace Ryans_Late_Fee_Calculator
         {
             ClearTextBoxes(); // clearing the text boxes
             ClearUserInput(); // clearing the text boxes
+            ClearErrorMessage(); // clearing error messages
+            this.dueDate.Focus();
             this.Hide();  // closing the current form
         }
 
@@ -161,5 +167,7 @@ namespace Ryans_Late_Fee_Calculator
             this.labelErrorCustomerType.Visible = false;
         }
 
+
+        
     }
 }
