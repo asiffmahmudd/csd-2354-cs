@@ -109,7 +109,7 @@ namespace Ryans_Late_Fee_Calculator
                 obj.Text = errorMsg; // setting error message
                 obj.Visible = true; // showing error message
             }
-        }
+        } 
 
         private void btnCalculate_Click(object sender, EventArgs e)
         {
