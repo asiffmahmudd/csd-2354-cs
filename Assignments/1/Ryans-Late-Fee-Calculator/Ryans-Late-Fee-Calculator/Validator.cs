@@ -9,75 +9,82 @@ namespace Ryans_Late_Fee_Calculator
 {
     internal class Validator
     {
-        public static bool IsDueDateValid(string dueDateValue, out DateTime dueDate,out string errorMsg)
+        // method for validating null input
+        public static bool IsPresent(string input)
         {
-            errorMsg = null;
-            bool isParsed = DateTime.TryParse(dueDateValue, out dueDate); // trying to parse the date input and storing it to the variable
-            if (!isParsed) 
+            if (string.IsNullOrEmpty(input))  // checking if the field is empty
             {
-                if (string.IsNullOrEmpty(dueDateValue))  // checking if the field is empty
-                {
-                    errorMsg = "Current date can't be empty"; //assigning error message
-                }
-                else // error found
-                {
-                    errorMsg = "Invalid date input!"; //assigning error message
-                }
-                
+                return false;
             }
-            if (dueDate > DateTime.Now) // checking if the parsed date is larger than the current date
-            {
-                errorMsg = "Due date cannot be greater than current date"; //assigning error message
-                isParsed = false; 
-            }
-            return isParsed;
+            return true;
         }
 
         // method for validating an integer input
-        public static bool IsInt(string input, out int parsedInt, string textField, out string errorMsg)
+        public static bool IsInt32(string input, out int parsedInt)
+        {
+            bool isParsed = int.TryParse(input, out parsedInt);
+            if(isParsed && parsedInt <= Int32.MaxValue && parsedInt >= Int32.MinValue)
+            {
+                return isParsed;
+            }
+            return false;
+        }
+
+        // method for checking greater than zero value
+        public static bool IsGreaterThanZero(int input)
+        {
+            if (input > 0)  // checking if the field is empty
+            {
+                return true;
+            }
+            return false;
+        }
+
+        // method for checking number of movies input
+        public static bool IsNumberOfMoviesValid(string input, out int parsedInt, string textField, out string errorMsg)
         {
             errorMsg = null;
-            bool isParsed = int.TryParse(input, out parsedInt);
-            if (!isParsed)
+            parsedInt = -1;
+            if (IsPresent(input))
             {
-                if (string.IsNullOrEmpty(input))  // checking if the field is empty
+                if(IsInt32(input, out parsedInt))
                 {
-                    //assigning error message
-                    errorMsg = textField + " can't be empty";
+                    if (IsGreaterThanZero(parsedInt))
+                    {
+                        return true;
+                    }
+                    else
+                    {
+                        //assigning error message
+                        errorMsg = textField + " should be greater than zero";
+                        return false;
+                    }
                 }
-                else // error found
+                else
                 {
                     //assigning error message
                     errorMsg = "Invalid input for " + textField + "!";
+                    return false;
                 }
-
             }
-            else if (parsedInt <= 0)  // checking if the field is empty
+            else
             {
                 //assigning error message
-                errorMsg = textField + " should be greater than zero";
-                isParsed = false;
-            }
-            return isParsed; 
+                errorMsg = textField + " can't be empty";
+                return false;
+            }        
         }
 
-        // method for validating an customer type input
-        public static bool IsCustomerTypeValid(String input, out string errorMsg)
+        // method for checking customer type
+        public static bool IsCustomerTypeValid(string customerType)
         {
-            errorMsg = null;
-            if (string.IsNullOrEmpty(input))  // checking if the field is empty
+            foreach (string type in Enum.GetNames(typeof(MainMenu.customerType)))
             {
-                //assigning error message and returning false
-                errorMsg = "Customer type can't be empty";
-                return false;
+                if(type == customerType)
+                {
+                    return true;
+                }
             }
-            else if(input == "N" || input == "J" || input == "L")
-            {
-                // returning true for correct user input
-                return true;
-            }
-            //assigning error message and returning false
-            errorMsg = "Invalid input for customer type";
             return false;
         }
     }

@@ -1,0 +1,52 @@
+C:\Users\Anne.murach\Documents\C# 2012 Instructor's CD\Extra exercise solutions\TaxCalculator\TaxCalculator\bin\Debug\TaxCalculator.exe.config
+C:\Users\Anne.murach\Documents\C# 2012 Instructor's CD\Extra exercise solutions\TaxCalculator\TaxCalculator\obj\Debug\TaxCalculator.csprojResolveAssemblyReference.cache
+C:\Users\Anne.murach\Documents\C# 2012 Instructor's CD\Extra exercise solutions\TaxCalculator\TaxCalculator\obj\Debug\TaxCalculator.Form1.resources
+C:\Users\Anne.murach\Documents\C# 2012 Instructor's CD\Extra exercise solutions\TaxCalculator\TaxCalculator\obj\Debug\TaxCalculator.Properties.Resources.resources
+C:\Users\Anne.murach\Documents\C# 2012 Instructor's CD\Extra exercise solutions\TaxCalculator\TaxCalculator\obj\Debug\TaxCalculator.csproj.GenerateResource.Cache
+C:\Users\Anne.murach\Documents\C# 2012 Instructor's CD\Extra exercise solutions\TaxCalculator\TaxCalculator\bin\Debug\TaxCalculator.exe
+C:\Users\Anne.murach\Documents\C# 2012 Instructor's CD\Extra exercise solutions\TaxCalculator\TaxCalculator\bin\Debug\TaxCalculator.pdb
+C:\Users\Anne.murach\Documents\C# 2012 Instructor's CD\Extra exercise solutions\TaxCalculator\TaxCalculator\obj\Debug\TaxCalculator.exe
+C:\Users\Anne.murach\Documents\C# 2012 Instructor's CD\Extra exercise solutions\TaxCalculator\TaxCalculator\obj\Debug\TaxCalculator.pdb
+C:\Users\Anne.murach\Documents\C# 2012 Instructor's CD\Extra exercise solutions\Chapter 05\TaxCalculator\TaxCalculator\bin\Debug\TaxCalculator.exe.config
+C:\Users\Anne.murach\Documents\C# 2012 Instructor's CD\Extra exercise solutions\Chapter 05\TaxCalculator\TaxCalculator\obj\Debug\TaxCalculator.exe
+C:\Users\Anne.murach\Documents\C# 2012 Instructor's CD\Extra exercise solutions\Chapter 05\TaxCalculator\TaxCalculator\obj\Debug\TaxCalculator.pdb
+C:\C# 2012 Instructor's CD\Extra exercises\Chapter 06\TaxCalculator\TaxCalculator\bin\Debug\TaxCalculator.exe.config
+C:\C# 2012 Instructor's CD\Extra exercises\Chapter 06\TaxCalculator\TaxCalculator\obj\Debug\TaxCalculator.exe
+C:\C# 2012 Instructor's CD\Extra exercises\Chapter 06\TaxCalculator\TaxCalculator\obj\Debug\TaxCalculator.pdb
+C:\C# 2012 Instructor's CD\Extra exercises\Chapter 06\TaxCalculator\TaxCalculator\bin\Debug\TaxCalculator.exe
+C:\C# 2012 Instructor's CD\Extra exercises\Chapter 06\TaxCalculator\TaxCalculator\bin\Debug\TaxCalculator.pdb
+C:\C# 2012 Instructor's CD\Extra exercises\Chapter 06\TaxCalculator\TaxCalculator\obj\Debug\TaxCalculator.csprojResolveAssemblyReference.cache
+C:\C# 2012 Instructor's CD\Extra exercises\Chapter 06\TaxCalculator\TaxCalculator\obj\Debug\TaxCalculator.Form1.resources
+C:\C# 2012 Instructor's CD\Extra exercises\Chapter 06\TaxCalculator\TaxCalculator\obj\Debug\TaxCalculator.Properties.Resources.resources
+C:\C# 2012 Instructor's CD\Extra exercises\Chapter 06\TaxCalculator\TaxCalculator\obj\Debug\TaxCalculator.csproj.GenerateResource.Cache
+C:\C# 2015\Extra exercises\Exercise starts\Chapter 06\TaxCalculator\TaxCalculator\bin\Debug\TaxCalculator.exe.config
+C:\C# 2015\Extra exercises\Exercise starts\Chapter 06\TaxCalculator\TaxCalculator\obj\Debug\TaxCalculator.exe
+C:\C# 2015\Extra exercises\Exercise starts\Chapter 06\TaxCalculator\TaxCalculator\obj\Debug\TaxCalculator.pdb
+C:\C# 2015\Extra exercises\Exercise starts\Chapter 06\TaxCalculator\TaxCalculator\bin\Debug\TaxCalculator.exe
+C:\C# 2015\Extra exercises\Exercise starts\Chapter 06\TaxCalculator\TaxCalculator\bin\Debug\TaxCalculator.pdb
+C:\C# 2015\Extra exercises\Exercise starts\Chapter 06\TaxCalculator\TaxCalculator\obj\Debug\TaxCalculator.csprojResolveAssemblyReference.cache
+C:\C# 2015\Extra exercises\Exercise starts\Chapter 06\TaxCalculator\TaxCalculator\obj\Debug\TaxCalculator.Form1.resources
+C:\C# 2015\Extra exercises\Exercise starts\Chapter 06\TaxCalculator\TaxCalculator\obj\Debug\TaxCalculator.Properties.Resources.resources
+C:\C# 2015\Extra exercises\Exercise starts\Chapter 06\TaxCalculator\TaxCalculator\obj\Debug\TaxCalculator.csproj.GenerateResource.Cache
+C:\Users\nopet\Documents\Lambton\CSD-2354 2cd Exam Files\TaxCalculator\TaxCalculator\bin\Debug\TaxCalculator.exe.config
+C:\Users\nopet\Documents\Lambton\CSD-2354 2cd Exam Files\TaxCalculator\TaxCalculator\bin\Debug\TaxCalculator.exe
+C:\Users\nopet\Documents\Lambton\CSD-2354 2cd Exam Files\TaxCalculator\TaxCalculator\bin\Debug\TaxCalculator.pdb
+C:\Users\nopet\Documents\Lambton\CSD-2354 2cd Exam Files\TaxCalculator\TaxCalculator\obj\Debug\TaxCalculator.csproj.AssemblyReference.cache
+C:\Users\nopet\Documents\Lambton\CSD-2354 2cd Exam Files\TaxCalculator\TaxCalculator\obj\Debug\TaxCalculator.csproj.SuggestedBindingRedirects.cache
+C:\Users\nopet\Documents\Lambton\CSD-2354 2cd Exam Files\TaxCalculator\TaxCalculator\obj\Debug\TaxCalculator.Form1.resources
+C:\Users\nopet\Documents\Lambton\CSD-2354 2cd Exam Files\TaxCalculator\TaxCalculator\obj\Debug\TaxCalculator.Properties.Resources.resources
+C:\Users\nopet\Documents\Lambton\CSD-2354 2cd Exam Files\TaxCalculator\TaxCalculator\obj\Debug\TaxCalculator.csproj.GenerateResource.cache
+C:\Users\nopet\Documents\Lambton\CSD-2354 2cd Exam Files\TaxCalculator\TaxCalculator\obj\Debug\TaxCalculator.csproj.CoreCompileInputs.cache
+C:\Users\nopet\Documents\Lambton\CSD-2354 2cd Exam Files\TaxCalculator\TaxCalculator\obj\Debug\TaxCalculator.exe
+C:\Users\nopet\Documents\Lambton\CSD-2354 2cd Exam Files\TaxCalculator\TaxCalculator\obj\Debug\TaxCalculator.pdb
+D:\Lambton\Term-2\CSD-2354-C#\Tests\test02\TaxCalculator\TaxCalculator\bin\Debug\TaxCalculator.exe.config
+D:\Lambton\Term-2\CSD-2354-C#\Tests\test02\TaxCalculator\TaxCalculator\bin\Debug\TaxCalculator.exe
+D:\Lambton\Term-2\CSD-2354-C#\Tests\test02\TaxCalculator\TaxCalculator\bin\Debug\TaxCalculator.pdb
+D:\Lambton\Term-2\CSD-2354-C#\Tests\test02\TaxCalculator\TaxCalculator\obj\Debug\TaxCalculator.csproj.AssemblyReference.cache
+D:\Lambton\Term-2\CSD-2354-C#\Tests\test02\TaxCalculator\TaxCalculator\obj\Debug\TaxCalculator.csproj.SuggestedBindingRedirects.cache
+D:\Lambton\Term-2\CSD-2354-C#\Tests\test02\TaxCalculator\TaxCalculator\obj\Debug\TaxCalculator.Form1.resources
+D:\Lambton\Term-2\CSD-2354-C#\Tests\test02\TaxCalculator\TaxCalculator\obj\Debug\TaxCalculator.Properties.Resources.resources
+D:\Lambton\Term-2\CSD-2354-C#\Tests\test02\TaxCalculator\TaxCalculator\obj\Debug\TaxCalculator.csproj.GenerateResource.cache
+D:\Lambton\Term-2\CSD-2354-C#\Tests\test02\TaxCalculator\TaxCalculator\obj\Debug\TaxCalculator.csproj.CoreCompileInputs.cache
+D:\Lambton\Term-2\CSD-2354-C#\Tests\test02\TaxCalculator\TaxCalculator\obj\Debug\TaxCalculator.exe
+D:\Lambton\Term-2\CSD-2354-C#\Tests\test02\TaxCalculator\TaxCalculator\obj\Debug\TaxCalculator.pdb

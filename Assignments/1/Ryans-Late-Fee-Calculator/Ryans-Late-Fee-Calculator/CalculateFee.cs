@@ -1,7 +1,7 @@
 ﻿/*
     Name: Asif Mahmud
     ID: C083711
-    Assignment: 02
+    Assignment: 03
 */
 using System;
 using System.Windows.Forms;
@@ -15,30 +15,35 @@ namespace Ryans_Late_Fee_Calculator
         public CalculateFee(string formType, int moviesCount, double lateFee, string titleText)
         {
             InitializeComponent();
-            this.currentDate.Text = DateTime.Now.ToString("MM/dd/yyyy");  //getting today's date and changing the value of current day field
-            this.numberOfMoviesCalculated.Text = moviesCount.ToString();
+            currentDate.Value = DateTime.Today;  //getting today's date and changing the value of current day field
+            numberOfMoviesCalculated.Text = moviesCount.ToString();
+            dueDate.MaxDate = DateTime.Today.AddDays(-1);
+            dueDate.Value = DateTime.Today.AddDays(-1);
+            customerType.SelectedIndex = 0;
             this.formType = formType;
-            this.lateFeeRate = lateFee;
+            lateFeeRate = lateFee;
             title.Text = titleText;
         }
 
 
-        private double CalculateDiscount(string customerType, double totalFee)
+        //calculating the discount 
+        private double GetDiscountRate(string customerType)
         {
-            if(customerType == "J")
+            if(customerType == "Junior")
             {
-                totalFee -=  totalFee * 0.05;
+                return 0.05;
             }
-            else if(customerType == "L")
+            else if(customerType == "Loyal")
             {
-                totalFee -= totalFee * 0.10;
+                return 0.10;
             }
-            return totalFee;
+            return 0;
         }
 
-        private void setNumberOfMoviesCalculated(int numberOfMovies)
+        private void SetNumberOfMoviesCalculated(int numberOfMovies)
         {
             int movieCount = 0;
+            // checking form type and then assigning the value to the corresponding variable
             if(formType == MainMenu.typeNewRelease)
             {
                 MainMenu.newReleasedMoviesCount += numberOfMovies;
@@ -54,51 +59,100 @@ namespace Ryans_Late_Fee_Calculator
                 MainMenu.kidsMoviesCount += numberOfMovies;
                 movieCount = MainMenu.kidsMoviesCount;
             }
-            this.numberOfMoviesCalculated.Text = movieCount.ToString();
+            numberOfMoviesCalculated.Text = movieCount.ToString(); // setting the textbox of the form
         }
 
-        private void setLateFee(int dayDifference, int numberOfMovies, string customerType)
-        {
-            double totalFee = dayDifference * numberOfMovies * this.lateFeeRate;  // calculating totalFee
-            totalFee = CalculateDiscount(customerType, totalFee);
-            this.lateFee.Text = totalFee.ToString("c");  // changing the textbox value of late fee
-        }
-
-        private int setAndGetNumberOfDaysLate(DateTime currentDate, DateTime dueDate)
+        private int GetNumberOfDaysLate(DateTime currentDate, DateTime dueDate)
         {
             int dayDifference = (int)(currentDate - dueDate).TotalDays;  // storing the difference in a variable
-            this.numberOfDaysLate.Text = dayDifference.ToString();  // changing the textbox value of number of days late
             return dayDifference;
         }
 
-        private void CalculateAndSetTextBox(DateTime dueDate, DateTime currentDate, int numberOfMovies, string customerType)
+        // setting the textboxes with appropriate values
+        private void SetTextBoxes(int numberOfDays, double totalLateFee, int numberOfMovies)
         {
-            int dayDifference = setAndGetNumberOfDaysLate(currentDate, dueDate);
-            setLateFee(dayDifference, numberOfMovies, customerType);
+            SetNumberOfMoviesCalculated(numberOfMovies); // setting the variable for total number of movies calculated
+            numberOfDaysLate.Text = numberOfDays.ToString();  // changing the textbox value of number of days late
+            lateFee.Text = totalLateFee.ToString("c");  // changing the textbox value of late fee
+        }
 
-            setNumberOfMoviesCalculated(numberOfMovies);
+        // method for getting the input from the textboxes
+        public void GetInputs(out DateTime currentDateValue, out DateTime dueDateValue, out string customerType, out string numberOfMovies)
+        {
+            currentDateValue = DateTime.Today;  // getting the current date 
+            dueDateValue = DateTime.Parse(dueDate.Text);
+            customerType = this.customerType.Text; // getting user input
+            numberOfMovies = this.numberOfMovies.Text;
+        }
+
+        //method for calculating fee 
+        public void CalculateAndSetText(DateTime currentDateValue, DateTime dueDateValue, string customerType, int numberOfMovies)
+        {
+            int numberOfDaysLate = GetNumberOfDaysLate(currentDateValue, dueDateValue);
+            double discountPercent = GetDiscountRate(customerType);
+            double lateFee = this.lateFeeRate * numberOfDaysLate * numberOfMovies;
+            if (discountPercent > 0)
+            {
+                lateFee -= lateFee * discountPercent;
+            }
+            SetTextBoxes(numberOfDaysLate, lateFee, numberOfMovies);
+        }
+
+        public bool IsDataValid(out DateTime currentDateValue, out DateTime dueDateValue, out string customerType,
+                                out int numberOfMovies)
+        {
+            GetInputs(out currentDateValue, out dueDateValue, out customerType, out string numberOfMoviesValue);
+            bool isNumberOfMoviesValid = Validator.IsNumberOfMoviesValid(numberOfMoviesValue, out numberOfMovies, "Number of Movies", out string errorMsgNumberOfMovies);
+            bool isCustomerTypeValid = Validator.IsCustomerTypeValid(customerType);
+            if (isNumberOfMoviesValid && isCustomerTypeValid){
+                return true;
+            }
+            else
+            {
+                //setting error message for the particular fields
+                SetErrorMsg(isNumberOfMoviesValid, labelErrorNumberOfMovies, errorMsgNumberOfMovies);
+                //clearing the fields if an error is found
+                ClearTextBoxes();
+            }
+            return false;
+        }
+
+        private void CalculateLateFee()
+        {
+            try
+            {
+                // data validation
+                if (IsDataValid(out DateTime currentDateValue, out DateTime dueDateValue, out string customerType,
+                                out int numberOfMovies))
+                {
+                    CalculateAndSetText(currentDateValue, dueDateValue, customerType, numberOfMovies);
+                    btnReturn.Focus();
+                }
+            }
+            catch(Exception exc)
+            {
+                Console.WriteLine(exc);
+            }
         }
 
         //method for clearing the text boxes
         private void ClearTextBoxes()
         {
-            this.numberOfDaysLate.Text = "";
-            this.lateFee.Text = "";
+            numberOfDaysLate.Text = "";
+            lateFee.Text = "";
         }
 
         //method for clearing the input fields
-        private void ClearUserInput()
+        private void ResetUserInput()
         {
-            this.dueDate.Text = "";
-            this.numberOfMovies.Text = "";
-            this.customerType.Text = "";
+            dueDate.Value = DateTime.Today.AddDays(-1);
+            numberOfMovies.Text = "";
+            customerType.SelectedIndex = 0;
         }
 
         private void ClearErrorMessage()
         {
-            this.labelErrorCustomerType.Text = "";
-            this.labelErrorDueDate.Text = "";
-            this.labelErrorNumberOfMovies.Text = "";
+            labelErrorNumberOfMovies.Text = "";
         }
 
         //method for setting error message
@@ -113,61 +167,32 @@ namespace Ryans_Late_Fee_Calculator
 
         private void btnCalculate_Click(object sender, EventArgs e)
         {
-            var currentDate = DateTime.Now;  // getting the current date 
-            
-            string dueDateValue = this.dueDate.Text; // getting user input
-            bool isDueDateValid = Validator.IsDueDateValid(dueDateValue, out DateTime dueDate, out string errorMsgDueDate); // checking validity
-
-            string numberOfMoviesValue = this.numberOfMovies.Text; // getting user input
-            bool isNumberOfMoviesValid = Validator.IsInt(numberOfMoviesValue, 
-                out int numberOfMovies, "Number of Movies", out string errorMsgNumberOfMovies); // checking validity
-
-            string customerType = this.customerType.Text; // getting user input
-            bool isCustomerTypeValid = Validator.IsCustomerTypeValid(customerType, out string errorMsgCustomerType); // checking validity
-
-            if (isDueDateValid && isNumberOfMoviesValid && isCustomerTypeValid)  //validating the date input using Validator class                             
-            {
-                CalculateAndSetTextBox(dueDate, currentDate, numberOfMovies, customerType);
-                this.btnReturn.Focus();
-            }
-            else 
-            {
-                //setting error message for the particular fields
-                SetErrorMsg(isDueDateValid, this.labelErrorDueDate, errorMsgDueDate);
-                SetErrorMsg(isNumberOfMoviesValid, this.labelErrorNumberOfMovies, errorMsgNumberOfMovies);
-                SetErrorMsg(isCustomerTypeValid, this.labelErrorCustomerType, errorMsgCustomerType);
-                //clearing the fields if an error is found
-                ClearTextBoxes();
-            }
+            CalculateLateFee();
         }
 
         //event handler for return button
         private void btnReturn_Click(object sender, EventArgs e)
         {
             ClearTextBoxes(); // clearing the text boxes
-            ClearUserInput(); // clearing the text boxes
+            ResetUserInput(); // clearing the text boxes
             ClearErrorMessage(); // clearing error messages
-            this.dueDate.Focus();
-            this.Hide();  // closing the current form
+            dueDate.Focus();
+            Hide();  // closing the current form
         }
 
-        // event handler for text change in due date
-        private void dueDate_TextChanged(object sender, EventArgs e)
-        {
-            this.labelErrorDueDate.Visible = false;
-        }
+        
         // event handler for text change in number of movies
         private void numberOfMovies_TextChanged(object sender, EventArgs e)
         {
-            this.labelErrorNumberOfMovies.Visible = false;
+            labelErrorNumberOfMovies.Visible = false;
+            lateFee.Text = "";
+        }
+
+        private void dueDate_ValueChanged(object sender, EventArgs e)
+        {
+            numberOfDaysLate.Text = "";
         }
         // event handler for text change in customer type
-        private void customerType_TextChanged(object sender, EventArgs e)
-        {
-            this.labelErrorCustomerType.Visible = false;
-        }
 
-
-        
     }
 }

@@ -1,7 +1,7 @@
 ﻿/*
     Name: Asif Mahmud
     ID: C083711
-    Assignment: 02
+    Assignment: 03
 */
 using System;
 using System.Collections.Generic;
@@ -22,6 +22,7 @@ namespace Ryans_Late_Fee_Calculator
         CalculateFee libraryObj;
         CalculateFee kidsObj;
 
+        // varables for total number of movies calculated for each type
         public static int newReleasedMoviesCount = 0;
         public static int libraryMoviesCount = 0;
         public static int kidsMoviesCount = 0;
@@ -30,6 +31,15 @@ namespace Ryans_Late_Fee_Calculator
         public static string typeLibraryMovies = "Library Movies";
         public static string typeKidsMovies = "Kid's Movies";
 
+        // variable for checking customer type
+        public enum customerType
+        {
+            New,
+            Junior,
+            Loyal
+        };
+
+        // assigning late fee rate for the corresponding movie type
         private double newReleaseRate = 2.00;
         private double libraryMoviesRate = 0.57;
         private double kidMoviesRate = 0.15;
@@ -42,7 +52,7 @@ namespace Ryans_Late_Fee_Calculator
             InitializeComponent();
         }
 
-        //method for new realeas button click
+        //method for new release button click
         private void btnNewRelease_Click(object sender, EventArgs e)
         {
             try
