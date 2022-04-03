@@ -37,6 +37,10 @@
             this.title = new System.Windows.Forms.Label();
             this.subtitle = new System.Windows.Forms.Label();
             this.calculatorImage = new System.Windows.Forms.PictureBox();
+            this.labelTotalFee = new System.Windows.Forms.Label();
+            this.valueTotalFee = new System.Windows.Forms.Label();
+            this.valueCurrentCalculatedFee = new System.Windows.Forms.Label();
+            this.labelCurrentCalculatedFee = new System.Windows.Forms.Label();
             this.btnContainer.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.calculatorImage)).BeginInit();
             this.SuspendLayout();
@@ -52,7 +56,7 @@
             this.btnContainer.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnContainer.Name = "btnContainer";
             this.btnContainer.Size = new System.Drawing.Size(408, 471);
-            this.btnContainer.TabIndex = 2;
+            this.btnContainer.TabIndex = 6;
             // 
             // btnExit
             // 
@@ -67,7 +71,7 @@
             this.btnExit.Name = "btnExit";
             this.btnExit.Padding = new System.Windows.Forms.Padding(30, 0, 0, 0);
             this.btnExit.Size = new System.Drawing.Size(269, 66);
-            this.btnExit.TabIndex = 6;
+            this.btnExit.TabIndex = 10;
             this.btnExit.Text = "E&xit The App";
             this.btnExit.UseVisualStyleBackColor = false;
             this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
@@ -84,7 +88,7 @@
             this.btnKidsMovie.Name = "btnKidsMovie";
             this.btnKidsMovie.Padding = new System.Windows.Forms.Padding(30, 0, 0, 0);
             this.btnKidsMovie.Size = new System.Drawing.Size(269, 68);
-            this.btnKidsMovie.TabIndex = 5;
+            this.btnKidsMovie.TabIndex = 9;
             this.btnKidsMovie.Text = "&Kid\'s Movie";
             this.btnKidsMovie.UseVisualStyleBackColor = false;
             this.btnKidsMovie.Click += new System.EventHandler(this.btnKidsMovie_Click);
@@ -101,7 +105,7 @@
             this.btnLibraryMovie.Name = "btnLibraryMovie";
             this.btnLibraryMovie.Padding = new System.Windows.Forms.Padding(30, 0, 0, 0);
             this.btnLibraryMovie.Size = new System.Drawing.Size(269, 67);
-            this.btnLibraryMovie.TabIndex = 4;
+            this.btnLibraryMovie.TabIndex = 8;
             this.btnLibraryMovie.Text = "&Library Movie";
             this.btnLibraryMovie.UseVisualStyleBackColor = false;
             this.btnLibraryMovie.Click += new System.EventHandler(this.btnLibraryMovie_Click);
@@ -118,7 +122,7 @@
             this.btnNewRelease.Name = "btnNewRelease";
             this.btnNewRelease.Padding = new System.Windows.Forms.Padding(30, 10, 0, 10);
             this.btnNewRelease.Size = new System.Drawing.Size(269, 64);
-            this.btnNewRelease.TabIndex = 3;
+            this.btnNewRelease.TabIndex = 7;
             this.btnNewRelease.Text = "&New Release";
             this.btnNewRelease.UseVisualStyleBackColor = false;
             this.btnNewRelease.Click += new System.EventHandler(this.btnNewRelease_Click);
@@ -151,13 +155,57 @@
             // 
             this.calculatorImage.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(13)))), ((int)(((byte)(13)))));
             this.calculatorImage.Image = ((System.Drawing.Image)(resources.GetObject("calculatorImage.Image")));
-            this.calculatorImage.Location = new System.Drawing.Point(36, 213);
+            this.calculatorImage.Location = new System.Drawing.Point(36, 186);
             this.calculatorImage.Margin = new System.Windows.Forms.Padding(4);
             this.calculatorImage.Name = "calculatorImage";
             this.calculatorImage.Size = new System.Drawing.Size(233, 297);
             this.calculatorImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.calculatorImage.TabIndex = 3;
             this.calculatorImage.TabStop = false;
+            // 
+            // labelTotalFee
+            // 
+            this.labelTotalFee.AutoSize = true;
+            this.labelTotalFee.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F);
+            this.labelTotalFee.ForeColor = System.Drawing.Color.White;
+            this.labelTotalFee.Location = new System.Drawing.Point(32, 519);
+            this.labelTotalFee.Name = "labelTotalFee";
+            this.labelTotalFee.Size = new System.Drawing.Size(236, 26);
+            this.labelTotalFee.TabIndex = 2;
+            this.labelTotalFee.Text = "Total fee for all movies:";
+            // 
+            // valueTotalFee
+            // 
+            this.valueTotalFee.AutoSize = true;
+            this.valueTotalFee.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F);
+            this.valueTotalFee.ForeColor = System.Drawing.Color.White;
+            this.valueTotalFee.Location = new System.Drawing.Point(291, 519);
+            this.valueTotalFee.Name = "valueTotalFee";
+            this.valueTotalFee.Size = new System.Drawing.Size(66, 26);
+            this.valueTotalFee.TabIndex = 3;
+            this.valueTotalFee.Text = "$0.00";
+            // 
+            // valueCurrentCalculatedFee
+            // 
+            this.valueCurrentCalculatedFee.AutoSize = true;
+            this.valueCurrentCalculatedFee.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F);
+            this.valueCurrentCalculatedFee.ForeColor = System.Drawing.Color.White;
+            this.valueCurrentCalculatedFee.Location = new System.Drawing.Point(291, 554);
+            this.valueCurrentCalculatedFee.Name = "valueCurrentCalculatedFee";
+            this.valueCurrentCalculatedFee.Size = new System.Drawing.Size(66, 26);
+            this.valueCurrentCalculatedFee.TabIndex = 5;
+            this.valueCurrentCalculatedFee.Text = "$0.00";
+            // 
+            // labelCurrentCalculatedFee
+            // 
+            this.labelCurrentCalculatedFee.AutoSize = true;
+            this.labelCurrentCalculatedFee.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F);
+            this.labelCurrentCalculatedFee.ForeColor = System.Drawing.Color.White;
+            this.labelCurrentCalculatedFee.Location = new System.Drawing.Point(32, 554);
+            this.labelCurrentCalculatedFee.Name = "labelCurrentCalculatedFee";
+            this.labelCurrentCalculatedFee.Size = new System.Drawing.Size(230, 26);
+            this.labelCurrentCalculatedFee.TabIndex = 4;
+            this.labelCurrentCalculatedFee.Text = "Current calculated fee:";
             // 
             // MainMenu
             // 
@@ -168,6 +216,10 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.CancelButton = this.btnExit;
             this.ClientSize = new System.Drawing.Size(964, 615);
+            this.Controls.Add(this.valueCurrentCalculatedFee);
+            this.Controls.Add(this.labelCurrentCalculatedFee);
+            this.Controls.Add(this.valueTotalFee);
+            this.Controls.Add(this.labelTotalFee);
             this.Controls.Add(this.calculatorImage);
             this.Controls.Add(this.subtitle);
             this.Controls.Add(this.title);
@@ -194,6 +246,10 @@
         private System.Windows.Forms.Button btnExit;
         private System.Windows.Forms.Button btnKidsMovie;
         private System.Windows.Forms.Button btnLibraryMovie;
+        private System.Windows.Forms.Label labelTotalFee;
+        private System.Windows.Forms.Label valueTotalFee;
+        private System.Windows.Forms.Label valueCurrentCalculatedFee;
+        private System.Windows.Forms.Label labelCurrentCalculatedFee;
     }
 }
 

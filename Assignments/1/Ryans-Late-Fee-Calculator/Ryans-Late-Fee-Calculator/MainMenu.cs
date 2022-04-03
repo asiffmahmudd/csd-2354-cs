@@ -49,6 +49,16 @@ namespace Ryans_Late_Fee_Calculator
             newReleaseObj = new CalculateFee(typeNewRelease, newReleasedMoviesCount, newReleaseRate, typeNewRelease + " ($" + newReleaseRate + "/day)");
             libraryObj = new CalculateFee(typeLibraryMovies, libraryMoviesCount, libraryMoviesRate, typeLibraryMovies + " ($" + libraryMoviesRate + "/day)");
             kidsObj = new CalculateFee(typeKidsMovies, kidsMoviesCount, kidMoviesRate, typeKidsMovies + " ($" + kidMoviesRate + "/day)");
+            
+            //setting event handler for different type of form while closing
+            newReleaseObj.VisibleChanged += new EventHandler(this.CalculateFee_SetText);
+            libraryObj.VisibleChanged += new EventHandler(this.CalculateFee_SetText);
+            kidsObj.VisibleChanged += new EventHandler(this.CalculateFee_SetText);
+
+            newReleaseObj.FormClosing += new FormClosingEventHandler(this.CalculateFee_SetText);
+            libraryObj.FormClosing += new FormClosingEventHandler(this.CalculateFee_SetText);
+            kidsObj.FormClosing += new FormClosingEventHandler(this.CalculateFee_SetText);
+
             InitializeComponent();
         }
 
@@ -106,6 +116,16 @@ namespace Ryans_Late_Fee_Calculator
                 Console.WriteLine(msg);
             }
         }
+
+        //setting text of the labels in the main menu
+        private void CalculateFee_SetText(object sender, EventArgs e)
+        {
+            double currentTotalFee = CalculateFee.newMovieTotalFee + CalculateFee.libraryMovieTotalFee + CalculateFee.kidsMovieTotalFee;
+            valueCurrentCalculatedFee.Text = currentTotalFee.ToString("c");
+            valueTotalFee.Text = CalculateFee.totalCalculatedFee.ToString("c");
+        }
+
+
         // event handler for exit button click
         private void btnExit_Click(object sender, EventArgs e)
         {

@@ -1,7 +1,7 @@
 ﻿/*
     Name: Asif Mahmud
     ID: C083711
-    Assignment: 03
+    Assignment: 04
 */
 using System;
 using System.Windows.Forms;
@@ -12,6 +12,11 @@ namespace Ryans_Late_Fee_Calculator
     {
         private double lateFeeRate; // variable for late fee of the form
         private string formType;
+        public static double newMovieTotalFee { get; private set; }
+        public static double libraryMovieTotalFee { get; private set; }
+        public static double kidsMovieTotalFee { get; private set; }
+        public static double totalCalculatedFee { get; private set; }
+
         public CalculateFee(string formType, int moviesCount, double lateFee, string titleText)
         {
             InitializeComponent();
@@ -23,6 +28,7 @@ namespace Ryans_Late_Fee_Calculator
             this.formType = formType;
             lateFeeRate = lateFee;
             title.Text = titleText;
+            //btnReturn.DialogResult = DialogResult.OK;
         }
 
 
@@ -68,19 +74,37 @@ namespace Ryans_Late_Fee_Calculator
             return dayDifference;
         }
 
+        private void SetTotalLateFee(double totalLateFee)
+        {
+            if (formType == MainMenu.typeNewRelease)
+            {
+                newMovieTotalFee = totalLateFee;
+            }
+            else if (formType == MainMenu.typeLibraryMovies)
+            {
+                libraryMovieTotalFee = totalLateFee;
+            }
+            else if (formType == MainMenu.typeKidsMovies)
+            {
+                kidsMovieTotalFee = totalLateFee;
+            }
+            totalCalculatedFee += totalLateFee;
+        }
+
         // setting the textboxes with appropriate values
         private void SetTextBoxes(int numberOfDays, double totalLateFee, int numberOfMovies)
         {
             SetNumberOfMoviesCalculated(numberOfMovies); // setting the variable for total number of movies calculated
             numberOfDaysLate.Text = numberOfDays.ToString();  // changing the textbox value of number of days late
             lateFee.Text = totalLateFee.ToString("c");  // changing the textbox value of late fee
+            SetTotalLateFee(totalLateFee);
         }
 
         // method for getting the input from the textboxes
         public void GetInputs(out DateTime currentDateValue, out DateTime dueDateValue, out string customerType, out string numberOfMovies)
         {
             currentDateValue = DateTime.Today;  // getting the current date 
-            dueDateValue = DateTime.Parse(dueDate.Text);
+            dueDateValue = dueDate.Value;
             customerType = this.customerType.Text; // getting user input
             numberOfMovies = this.numberOfMovies.Text;
         }
@@ -192,6 +216,18 @@ namespace Ryans_Late_Fee_Calculator
         {
             numberOfDaysLate.Text = "";
         }
+
+        private void btnAddMovies_Click(object sender, EventArgs e)
+        {
+            Form addMovieForm = new FormLateFilms();
+            DialogResult selectedBtn = addMovieForm.ShowDialog();
+            if(selectedBtn == DialogResult.OK)
+            {
+                numberOfMovies.Text = FormLateFilms.SavedData.ToString();
+            }
+        }
+
+
         // event handler for text change in customer type
 
     }

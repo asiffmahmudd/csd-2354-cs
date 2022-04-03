@@ -46,6 +46,7 @@
             this.labelNumberOfMoviesCalculated = new System.Windows.Forms.Label();
             this.numberOfMoviesCalculated = new System.Windows.Forms.TextBox();
             this.btnContainer = new System.Windows.Forms.Panel();
+            this.btnAddMovies = new System.Windows.Forms.Button();
             this.currentDate = new System.Windows.Forms.DateTimePicker();
             this.customerType = new System.Windows.Forms.ComboBox();
             this.dueDate = new System.Windows.Forms.DateTimePicker();
@@ -104,50 +105,50 @@
             // 
             this.labelCurrentDate.AutoSize = true;
             this.labelCurrentDate.Font = new System.Drawing.Font("Montserrat", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelCurrentDate.Location = new System.Drawing.Point(46, 293);
+            this.labelCurrentDate.Location = new System.Drawing.Point(46, 292);
             this.labelCurrentDate.Name = "labelCurrentDate";
             this.labelCurrentDate.Size = new System.Drawing.Size(254, 24);
-            this.labelCurrentDate.TabIndex = 10;
+            this.labelCurrentDate.TabIndex = 11;
             this.labelCurrentDate.Text = "Current Date (mm/dd/yyyy)";
             // 
             // numberOfDaysLate
             // 
             this.numberOfDaysLate.Font = new System.Drawing.Font("Montserrat", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.numberOfDaysLate.Location = new System.Drawing.Point(50, 390);
+            this.numberOfDaysLate.Location = new System.Drawing.Point(50, 389);
             this.numberOfDaysLate.Name = "numberOfDaysLate";
             this.numberOfDaysLate.ReadOnly = true;
             this.numberOfDaysLate.Size = new System.Drawing.Size(311, 26);
-            this.numberOfDaysLate.TabIndex = 13;
+            this.numberOfDaysLate.TabIndex = 14;
             this.numberOfDaysLate.TabStop = false;
             // 
             // labelNumberOfDaysLate
             // 
             this.labelNumberOfDaysLate.AutoSize = true;
             this.labelNumberOfDaysLate.Font = new System.Drawing.Font("Montserrat", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelNumberOfDaysLate.Location = new System.Drawing.Point(45, 363);
+            this.labelNumberOfDaysLate.Location = new System.Drawing.Point(45, 362);
             this.labelNumberOfDaysLate.Name = "labelNumberOfDaysLate";
             this.labelNumberOfDaysLate.Size = new System.Drawing.Size(201, 24);
-            this.labelNumberOfDaysLate.TabIndex = 12;
+            this.labelNumberOfDaysLate.TabIndex = 13;
             this.labelNumberOfDaysLate.Text = "Number Of Days Late";
             // 
             // labelLateFee
             // 
             this.labelLateFee.AutoSize = true;
             this.labelLateFee.Font = new System.Drawing.Font("Montserrat", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelLateFee.Location = new System.Drawing.Point(45, 433);
+            this.labelLateFee.Location = new System.Drawing.Point(45, 432);
             this.labelLateFee.Name = "labelLateFee";
             this.labelLateFee.Size = new System.Drawing.Size(86, 24);
-            this.labelLateFee.TabIndex = 14;
+            this.labelLateFee.TabIndex = 15;
             this.labelLateFee.Text = "Late Fee";
             // 
             // lateFee
             // 
             this.lateFee.Font = new System.Drawing.Font("Montserrat", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lateFee.Location = new System.Drawing.Point(49, 460);
+            this.lateFee.Location = new System.Drawing.Point(49, 459);
             this.lateFee.Name = "lateFee";
             this.lateFee.ReadOnly = true;
             this.lateFee.Size = new System.Drawing.Size(311, 26);
-            this.lateFee.TabIndex = 15;
+            this.lateFee.TabIndex = 16;
             this.lateFee.TabStop = false;
             // 
             // btnCalculate
@@ -155,10 +156,10 @@
             this.btnCalculate.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(99)))), ((int)(((byte)(217)))));
             this.btnCalculate.Font = new System.Drawing.Font("Montserrat", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCalculate.ForeColor = System.Drawing.Color.White;
-            this.btnCalculate.Location = new System.Drawing.Point(51, 582);
+            this.btnCalculate.Location = new System.Drawing.Point(51, 581);
             this.btnCalculate.Name = "btnCalculate";
             this.btnCalculate.Size = new System.Drawing.Size(142, 42);
-            this.btnCalculate.TabIndex = 18;
+            this.btnCalculate.TabIndex = 19;
             this.btnCalculate.Text = "&Calculate";
             this.btnCalculate.UseVisualStyleBackColor = false;
             this.btnCalculate.Click += new System.EventHandler(this.btnCalculate_Click);
@@ -167,7 +168,7 @@
             // 
             this.labelNumberOfMovies.AutoSize = true;
             this.labelNumberOfMovies.Font = new System.Drawing.Font("Montserrat", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelNumberOfMovies.Location = new System.Drawing.Point(47, 118);
+            this.labelNumberOfMovies.Location = new System.Drawing.Point(47, 111);
             this.labelNumberOfMovies.Name = "labelNumberOfMovies";
             this.labelNumberOfMovies.Size = new System.Drawing.Size(177, 24);
             this.labelNumberOfMovies.TabIndex = 5;
@@ -175,27 +176,29 @@
             // 
             // numberOfMovies
             // 
-            this.numberOfMovies.Location = new System.Drawing.Point(50, 145);
+            this.numberOfMovies.Location = new System.Drawing.Point(50, 138);
             this.numberOfMovies.Name = "numberOfMovies";
+            this.numberOfMovies.ReadOnly = true;
             this.numberOfMovies.Size = new System.Drawing.Size(312, 22);
             this.numberOfMovies.TabIndex = 6;
+            this.numberOfMovies.TabStop = false;
             this.numberOfMovies.TextChanged += new System.EventHandler(this.numberOfMovies_TextChanged);
             // 
             // labelCustomerType
             // 
             this.labelCustomerType.AutoSize = true;
             this.labelCustomerType.Font = new System.Drawing.Font("Montserrat", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelCustomerType.Location = new System.Drawing.Point(46, 198);
+            this.labelCustomerType.Location = new System.Drawing.Point(46, 226);
             this.labelCustomerType.Name = "labelCustomerType";
             this.labelCustomerType.Size = new System.Drawing.Size(145, 24);
-            this.labelCustomerType.TabIndex = 8;
+            this.labelCustomerType.TabIndex = 9;
             this.labelCustomerType.Text = "Customer &Type";
             // 
             // labelErrorNumberOfMovies
             // 
             this.labelErrorNumberOfMovies.AutoSize = true;
             this.labelErrorNumberOfMovies.ForeColor = System.Drawing.Color.Red;
-            this.labelErrorNumberOfMovies.Location = new System.Drawing.Point(49, 170);
+            this.labelErrorNumberOfMovies.Location = new System.Drawing.Point(49, 163);
             this.labelErrorNumberOfMovies.Name = "labelErrorNumberOfMovies";
             this.labelErrorNumberOfMovies.Size = new System.Drawing.Size(189, 16);
             this.labelErrorNumberOfMovies.TabIndex = 7;
@@ -206,25 +209,26 @@
             // 
             this.labelNumberOfMoviesCalculated.AutoSize = true;
             this.labelNumberOfMoviesCalculated.Font = new System.Drawing.Font("Montserrat", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelNumberOfMoviesCalculated.Location = new System.Drawing.Point(45, 505);
+            this.labelNumberOfMoviesCalculated.Location = new System.Drawing.Point(45, 504);
             this.labelNumberOfMoviesCalculated.Name = "labelNumberOfMoviesCalculated";
             this.labelNumberOfMoviesCalculated.Size = new System.Drawing.Size(273, 24);
-            this.labelNumberOfMoviesCalculated.TabIndex = 16;
+            this.labelNumberOfMoviesCalculated.TabIndex = 17;
             this.labelNumberOfMoviesCalculated.Text = "Number of Movies Calculated";
             // 
             // numberOfMoviesCalculated
             // 
             this.numberOfMoviesCalculated.Font = new System.Drawing.Font("Montserrat", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.numberOfMoviesCalculated.Location = new System.Drawing.Point(48, 532);
+            this.numberOfMoviesCalculated.Location = new System.Drawing.Point(48, 531);
             this.numberOfMoviesCalculated.Name = "numberOfMoviesCalculated";
             this.numberOfMoviesCalculated.ReadOnly = true;
             this.numberOfMoviesCalculated.Size = new System.Drawing.Size(311, 26);
-            this.numberOfMoviesCalculated.TabIndex = 17;
+            this.numberOfMoviesCalculated.TabIndex = 18;
             this.numberOfMoviesCalculated.TabStop = false;
             // 
             // btnContainer
             // 
             this.btnContainer.BackColor = System.Drawing.Color.White;
+            this.btnContainer.Controls.Add(this.btnAddMovies);
             this.btnContainer.Controls.Add(this.currentDate);
             this.btnContainer.Controls.Add(this.customerType);
             this.btnContainer.Controls.Add(this.dueDate);
@@ -248,13 +252,26 @@
             this.btnContainer.Size = new System.Drawing.Size(408, 675);
             this.btnContainer.TabIndex = 2;
             // 
+            // btnAddMovies
+            // 
+            this.btnAddMovies.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(99)))), ((int)(((byte)(217)))));
+            this.btnAddMovies.Font = new System.Drawing.Font("Montserrat", 9F, System.Drawing.FontStyle.Bold);
+            this.btnAddMovies.ForeColor = System.Drawing.Color.White;
+            this.btnAddMovies.Location = new System.Drawing.Point(48, 182);
+            this.btnAddMovies.Name = "btnAddMovies";
+            this.btnAddMovies.Size = new System.Drawing.Size(315, 32);
+            this.btnAddMovies.TabIndex = 8;
+            this.btnAddMovies.Text = "&Add Movies";
+            this.btnAddMovies.UseVisualStyleBackColor = false;
+            this.btnAddMovies.Click += new System.EventHandler(this.btnAddMovies_Click);
+            // 
             // currentDate
             // 
             this.currentDate.Enabled = false;
-            this.currentDate.Location = new System.Drawing.Point(52, 321);
+            this.currentDate.Location = new System.Drawing.Point(52, 320);
             this.currentDate.Name = "currentDate";
             this.currentDate.Size = new System.Drawing.Size(307, 22);
-            this.currentDate.TabIndex = 11;
+            this.currentDate.TabIndex = 12;
             this.currentDate.TabStop = false;
             // 
             // customerType
@@ -264,10 +281,10 @@
             "New",
             "Junior",
             "Loyal"});
-            this.customerType.Location = new System.Drawing.Point(51, 226);
+            this.customerType.Location = new System.Drawing.Point(51, 254);
             this.customerType.Name = "customerType";
             this.customerType.Size = new System.Drawing.Size(308, 24);
-            this.customerType.TabIndex = 9;
+            this.customerType.TabIndex = 10;
             // 
             // dueDate
             // 
@@ -285,10 +302,10 @@
             this.btnReturn.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btnReturn.Font = new System.Drawing.Font("Montserrat", 10F, System.Drawing.FontStyle.Bold);
             this.btnReturn.ForeColor = System.Drawing.Color.White;
-            this.btnReturn.Location = new System.Drawing.Point(217, 582);
+            this.btnReturn.Location = new System.Drawing.Point(217, 581);
             this.btnReturn.Name = "btnReturn";
             this.btnReturn.Size = new System.Drawing.Size(142, 42);
-            this.btnReturn.TabIndex = 19;
+            this.btnReturn.TabIndex = 20;
             this.btnReturn.Text = "&Return";
             this.btnReturn.UseVisualStyleBackColor = false;
             this.btnReturn.Click += new System.EventHandler(this.btnReturn_Click);
@@ -339,6 +356,7 @@
         private System.Windows.Forms.DateTimePicker dueDate;
         private System.Windows.Forms.ComboBox customerType;
         private System.Windows.Forms.DateTimePicker currentDate;
+        private System.Windows.Forms.Button btnAddMovies;
 
         // btn handlers
 
