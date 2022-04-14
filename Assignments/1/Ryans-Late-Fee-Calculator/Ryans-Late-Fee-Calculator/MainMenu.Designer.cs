@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainMenu));
             this.btnContainer = new System.Windows.Forms.Panel();
+            this.btnMaintenance = new System.Windows.Forms.Button();
             this.btnExit = new System.Windows.Forms.Button();
             this.btnKidsMovie = new System.Windows.Forms.Button();
             this.btnLibraryMovie = new System.Windows.Forms.Button();
@@ -48,6 +49,7 @@
             // btnContainer
             // 
             this.btnContainer.BackColor = System.Drawing.Color.White;
+            this.btnContainer.Controls.Add(this.btnMaintenance);
             this.btnContainer.Controls.Add(this.btnExit);
             this.btnContainer.Controls.Add(this.btnKidsMovie);
             this.btnContainer.Controls.Add(this.btnLibraryMovie);
@@ -55,8 +57,25 @@
             this.btnContainer.Location = new System.Drawing.Point(512, 59);
             this.btnContainer.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnContainer.Name = "btnContainer";
-            this.btnContainer.Size = new System.Drawing.Size(408, 471);
+            this.btnContainer.Size = new System.Drawing.Size(408, 574);
             this.btnContainer.TabIndex = 6;
+            // 
+            // btnMaintenance
+            // 
+            this.btnMaintenance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(99)))), ((int)(((byte)(217)))));
+            this.btnMaintenance.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnMaintenance.ForeColor = System.Drawing.Color.White;
+            this.btnMaintenance.Image = ((System.Drawing.Image)(resources.GetObject("btnMaintenance.Image")));
+            this.btnMaintenance.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnMaintenance.Location = new System.Drawing.Point(72, 358);
+            this.btnMaintenance.Margin = new System.Windows.Forms.Padding(4);
+            this.btnMaintenance.Name = "btnMaintenance";
+            this.btnMaintenance.Padding = new System.Windows.Forms.Padding(30, 0, 0, 0);
+            this.btnMaintenance.Size = new System.Drawing.Size(269, 66);
+            this.btnMaintenance.TabIndex = 10;
+            this.btnMaintenance.Text = "&Maintenance";
+            this.btnMaintenance.UseVisualStyleBackColor = false;
+            this.btnMaintenance.Click += new System.EventHandler(this.btnMaintenance_Click);
             // 
             // btnExit
             // 
@@ -66,12 +85,12 @@
             this.btnExit.ForeColor = System.Drawing.Color.White;
             this.btnExit.Image = ((System.Drawing.Image)(resources.GetObject("btnExit.Image")));
             this.btnExit.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnExit.Location = new System.Drawing.Point(72, 358);
+            this.btnExit.Location = new System.Drawing.Point(72, 455);
             this.btnExit.Margin = new System.Windows.Forms.Padding(4);
             this.btnExit.Name = "btnExit";
             this.btnExit.Padding = new System.Windows.Forms.Padding(30, 0, 0, 0);
             this.btnExit.Size = new System.Drawing.Size(269, 66);
-            this.btnExit.TabIndex = 10;
+            this.btnExit.TabIndex = 11;
             this.btnExit.Text = "E&xit The App";
             this.btnExit.UseVisualStyleBackColor = false;
             this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
@@ -170,16 +189,16 @@
             this.labelTotalFee.ForeColor = System.Drawing.Color.White;
             this.labelTotalFee.Location = new System.Drawing.Point(32, 519);
             this.labelTotalFee.Name = "labelTotalFee";
-            this.labelTotalFee.Size = new System.Drawing.Size(236, 26);
+            this.labelTotalFee.Size = new System.Drawing.Size(210, 26);
             this.labelTotalFee.TabIndex = 2;
-            this.labelTotalFee.Text = "Total fee for all movies:";
+            this.labelTotalFee.Text = "Total fee calculation:";
             // 
             // valueTotalFee
             // 
             this.valueTotalFee.AutoSize = true;
             this.valueTotalFee.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F);
             this.valueTotalFee.ForeColor = System.Drawing.Color.White;
-            this.valueTotalFee.Location = new System.Drawing.Point(291, 519);
+            this.valueTotalFee.Location = new System.Drawing.Point(248, 519);
             this.valueTotalFee.Name = "valueTotalFee";
             this.valueTotalFee.Size = new System.Drawing.Size(66, 26);
             this.valueTotalFee.TabIndex = 3;
@@ -190,7 +209,7 @@
             this.valueCurrentCalculatedFee.AutoSize = true;
             this.valueCurrentCalculatedFee.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F);
             this.valueCurrentCalculatedFee.ForeColor = System.Drawing.Color.White;
-            this.valueCurrentCalculatedFee.Location = new System.Drawing.Point(291, 554);
+            this.valueCurrentCalculatedFee.Location = new System.Drawing.Point(377, 554);
             this.valueCurrentCalculatedFee.Name = "valueCurrentCalculatedFee";
             this.valueCurrentCalculatedFee.Size = new System.Drawing.Size(66, 26);
             this.valueCurrentCalculatedFee.TabIndex = 5;
@@ -203,9 +222,9 @@
             this.labelCurrentCalculatedFee.ForeColor = System.Drawing.Color.White;
             this.labelCurrentCalculatedFee.Location = new System.Drawing.Point(32, 554);
             this.labelCurrentCalculatedFee.Name = "labelCurrentCalculatedFee";
-            this.labelCurrentCalculatedFee.Size = new System.Drawing.Size(230, 26);
+            this.labelCurrentCalculatedFee.Size = new System.Drawing.Size(339, 26);
             this.labelCurrentCalculatedFee.TabIndex = 4;
-            this.labelCurrentCalculatedFee.Text = "Current calculated fee:";
+            this.labelCurrentCalculatedFee.Text = "Calculated fee for all movie types:";
             // 
             // MainMenu
             // 
@@ -215,7 +234,7 @@
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(13)))), ((int)(((byte)(13)))));
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.CancelButton = this.btnExit;
-            this.ClientSize = new System.Drawing.Size(964, 615);
+            this.ClientSize = new System.Drawing.Size(960, 700);
             this.Controls.Add(this.valueCurrentCalculatedFee);
             this.Controls.Add(this.labelCurrentCalculatedFee);
             this.Controls.Add(this.valueTotalFee);
@@ -250,6 +269,7 @@
         private System.Windows.Forms.Label valueTotalFee;
         private System.Windows.Forms.Label valueCurrentCalculatedFee;
         private System.Windows.Forms.Label labelCurrentCalculatedFee;
+        private System.Windows.Forms.Button btnMaintenance;
     }
 }
 

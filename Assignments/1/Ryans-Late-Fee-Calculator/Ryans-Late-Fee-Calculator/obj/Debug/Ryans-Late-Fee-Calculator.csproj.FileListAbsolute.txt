@@ -11,3 +11,5 @@ D:\Lambton\Term-2\CSD-2354-C#\Assignments\1\Ryans-Late-Fee-Calculator\Ryans-Late
 D:\Lambton\Term-2\CSD-2354-C#\Assignments\1\Ryans-Late-Fee-Calculator\Ryans-Late-Fee-Calculator\obj\Debug\Ryans_Late_Fee_Calculator.mainMenu.resources
 D:\Lambton\Term-2\CSD-2354-C#\Assignments\1\Ryans-Late-Fee-Calculator\Ryans-Late-Fee-Calculator\obj\Debug\Ryans_Late_Fee_Calculator.calculateFee.resources
 D:\Lambton\Term-2\CSD-2354-C#\Assignments\1\Ryans-Late-Fee-Calculator\Ryans-Late-Fee-Calculator\obj\Debug\Ryans_Late_Fee_Calculator.FormLateFilms.resources
+D:\Lambton\Term-2\CSD-2354-C#\Assignments\1\Ryans-Late-Fee-Calculator\Ryans-Late-Fee-Calculator\obj\Debug\Ryans_Late_Fee_Calculator.NewMovie.resources
+D:\Lambton\Term-2\CSD-2354-C#\Assignments\1\Ryans-Late-Fee-Calculator\Ryans-Late-Fee-Calculator\obj\Debug\Ryans_Late_Fee_Calculator.RentalMaintenanceForm.resources

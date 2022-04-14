@@ -9,6 +9,7 @@ namespace Ryans_Late_Fee_Calculator
 {
     internal class Validator
     {
+        
         // method for validating null input
         public static bool IsPresent(string input)
         {
@@ -88,5 +89,47 @@ namespace Ryans_Late_Fee_Calculator
             return false;
         }
 
+
+        // method for checking rating
+        public static bool IsRatingValid(string rating)
+        {
+            if(rating == "G" || rating == "PG" || rating == "PG-13" || rating == "R" || rating == "NC-17")
+            {
+                return true;
+            }
+            return false;
+        }
+
+        //method for checking movie no
+        public static bool IsMovieNoValid(string movieNoText, out int movieNo, out string errorMsg)
+        {
+            errorMsg = null;
+            movieNo = -1;
+            if(IsPresent(movieNoText))
+            {
+                if(IsInt32(movieNoText, out movieNo))
+                {
+                    if (IsGreaterThanZero(movieNo))
+                    {
+                        return true;
+                    }
+                    else
+                    {
+                        errorMsg = "Please enter a value greater than zero";
+                        return false;
+                    }
+                }
+                else
+                {
+                    errorMsg = "Please enter a valid movie no";
+                    return false;
+                }
+            }
+            else
+            {
+                errorMsg = "Please enter a movie no";
+                return false;
+            }
+        }
     }
 }

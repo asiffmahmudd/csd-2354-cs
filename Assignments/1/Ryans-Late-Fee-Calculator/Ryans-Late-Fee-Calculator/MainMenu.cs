@@ -22,6 +22,10 @@ namespace Ryans_Late_Fee_Calculator
         CalculateFee libraryObj;
         CalculateFee kidsObj;
 
+        //variable for maintenance form
+        RentalMaintenanceForm rentalFormObj;
+        public static RentalItemDB rentalDbObj;
+
         // varables for total number of movies calculated for each type
         public static int newReleasedMoviesCount = 0;
         public static int libraryMoviesCount = 0;
@@ -49,7 +53,10 @@ namespace Ryans_Late_Fee_Calculator
             newReleaseObj = new CalculateFee(typeNewRelease, newReleasedMoviesCount, newReleaseRate, typeNewRelease + " ($" + newReleaseRate + "/day)");
             libraryObj = new CalculateFee(typeLibraryMovies, libraryMoviesCount, libraryMoviesRate, typeLibraryMovies + " ($" + libraryMoviesRate + "/day)");
             kidsObj = new CalculateFee(typeKidsMovies, kidsMoviesCount, kidMoviesRate, typeKidsMovies + " ($" + kidMoviesRate + "/day)");
-            
+
+            rentalFormObj = new RentalMaintenanceForm();
+            rentalDbObj = new RentalItemDB();
+
             //setting event handler for different type of form while closing
             newReleaseObj.VisibleChanged += new EventHandler(this.CalculateFee_SetText);
             libraryObj.VisibleChanged += new EventHandler(this.CalculateFee_SetText);
@@ -67,17 +74,17 @@ namespace Ryans_Late_Fee_Calculator
         {
             try
             {
-                newReleaseObj.Show(); // showing the form 
+                newReleaseObj.ShowDialog(); // showing the form 
             }
             catch(System.ObjectDisposedException) // exception if the object is disposed already 
             {
                 newReleaseObj = new CalculateFee(typeNewRelease, newReleasedMoviesCount, newReleaseRate, typeNewRelease + " ($" + newReleaseRate + "/day)");
-                newReleaseObj.Show();
+                newReleaseObj.ShowDialog();
             }
             catch (Exception ex) // exception for other errors
             {
                 var msg = ex.Message;
-                Console.WriteLine(msg);
+                MessageBox.Show(msg);
             }
         }
 
@@ -85,17 +92,17 @@ namespace Ryans_Late_Fee_Calculator
         {
             try
             {
-                kidsObj.Show();  // showing the form
+                kidsObj.ShowDialog();  // showing the form
             }
             catch (System.ObjectDisposedException) // exception if the object is disposed already 
             {
                 kidsObj = new CalculateFee(typeKidsMovies, kidsMoviesCount, kidMoviesRate, typeKidsMovies + " ($" + kidMoviesRate + "/day)");
-                kidsObj.Show();
+                kidsObj.ShowDialog();
             }
             catch (Exception ex) // exception for other errors
             {
                 var msg = ex.Message;
-                Console.WriteLine(msg);
+                MessageBox.Show(msg);
             }
         }
 
@@ -103,17 +110,17 @@ namespace Ryans_Late_Fee_Calculator
         {
             try
             {
-                libraryObj.Show();  // showing the form
+                libraryObj.ShowDialog();  // showing the form
             }
             catch (System.ObjectDisposedException) // exception if the object is disposed already 
             {
                 libraryObj = new CalculateFee(typeLibraryMovies, libraryMoviesCount, libraryMoviesRate, typeLibraryMovies + " ($" + libraryMoviesRate + "/day)");
-                libraryObj.Show();
+                libraryObj.ShowDialog();
             }
             catch (Exception ex) // exception for other errors
             {
                 var msg = ex.Message;
-                Console.WriteLine(msg);
+                MessageBox.Show(msg);
             }
         }
 
@@ -130,6 +137,19 @@ namespace Ryans_Late_Fee_Calculator
         private void btnExit_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void btnMaintenance_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                rentalFormObj.ShowDialog();  // showing the form
+            }
+            catch (Exception ex) // exception for other errors
+            {
+                var msg = ex.Message;
+                Console.WriteLine(msg);
+            }
         }
     }
 }

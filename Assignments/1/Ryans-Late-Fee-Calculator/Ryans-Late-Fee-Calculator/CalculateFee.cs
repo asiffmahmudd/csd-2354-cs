@@ -1,7 +1,7 @@
 ﻿/*
     Name: Asif Mahmud
     ID: C083711
-    Assignment: 04
+    Assignment: 05
 */
 using System;
 using System.Windows.Forms;
@@ -17,6 +17,8 @@ namespace Ryans_Late_Fee_Calculator
         public static double kidsMovieTotalFee { get; private set; }
         public static double totalCalculatedFee { get; private set; }
 
+        Form addMovieForm;
+
         public CalculateFee(string formType, int moviesCount, double lateFee, string titleText)
         {
             InitializeComponent();
@@ -28,9 +30,9 @@ namespace Ryans_Late_Fee_Calculator
             this.formType = formType;
             lateFeeRate = lateFee;
             title.Text = titleText;
+            addMovieForm = new FormLateFilms(formType);
             //btnReturn.DialogResult = DialogResult.OK;
         }
-
 
         //calculating the discount 
         private double GetDiscountRate(string customerType)
@@ -219,16 +221,12 @@ namespace Ryans_Late_Fee_Calculator
 
         private void btnAddMovies_Click(object sender, EventArgs e)
         {
-            Form addMovieForm = new FormLateFilms();
             DialogResult selectedBtn = addMovieForm.ShowDialog();
             if(selectedBtn == DialogResult.OK)
             {
                 numberOfMovies.Text = FormLateFilms.SavedData.ToString();
             }
         }
-
-
-        // event handler for text change in customer type
 
     }
 }

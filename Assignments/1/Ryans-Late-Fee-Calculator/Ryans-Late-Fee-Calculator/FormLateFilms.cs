@@ -13,44 +13,64 @@ namespace Ryans_Late_Fee_Calculator
 {
     public partial class FormLateFilms : Form
     {
-        private SortedList lateMovies = new SortedList();
-        private int count = 0;
         public static int SavedData { get; private set; }
-        public FormLateFilms()
+        private List<RentalItem> movieList;
+        private string formType;
+        public FormLateFilms(string formType)
         {
             InitializeComponent();
             btnOk.DialogResult = DialogResult.OK;
+            movieList = new List<RentalItem>();
+            this.formType = formType;
         }
 
         // adding movie to the list view
-        private void AddMovieToTheList(string movie)
+        private void AddMovieToTheList()
         {
-            labelErrorMovieName.Visible = false; // hiding any error message
-            lateMovies.Add(count++, movie);
-            movieName.Text = ""; // changing text to null after add
-            movieList.Items.Add(movie); // adding to the list
-            movieName.Focus(); // changing focus to the input box
-        }
-
-        //event handler for add button
-        private void btnAdd_Click(object sender, EventArgs e)
-        {
-            string movie = movieName.Text;
-            if (Validator.IsPresent(movie)) // checking for valid value
+            movieList.Clear();
+            foreach (ListItem item in lateMoviesList.CheckedItems)
             {
-                AddMovieToTheList(movie);
+                movieList.Add(item.Value);
             }
-            else
-            {
-                labelErrorMovieName.Text = "Please enter a movie name"; // setting error message
-                labelErrorMovieName.Visible = true; // showing the error message
-            }
+            RentalItemDB.SaveMovieTypeList(formType, movieList);
         }
 
         //event handler for ok button
         private void btnOk_Click(object sender, EventArgs e)
         {
-            SavedData = lateMovies.Count;
+            SavedData = lateMoviesList.CheckedItems.Count;
+            if (SavedData > 0) // checking for valid value
+            {
+                AddMovieToTheList();
+            }
+        }
+
+        private void FormLateFilms_Load(object sender, EventArgs e)
+        {
+            RentalMaintenanceForm.FillMovieListBox(lateMoviesList);
+
+            lateMoviesList.SetItemChecked(0, true);
+            //int index = 0;
+            
+            /*
+            foreach (ListItem listItem in lateMoviesList.Items)
+            {
+                try
+                {
+                    foreach (RentalItem checkedItem in RentalItemDB.CalculatedMovieList[formType])
+                    {
+                        if (checkedItem.GetMovieNo() == listItem.Value.GetMovieNo())
+                        {
+                            lateMoviesList.SetItemChecked(index, true);
+                        }
+                    }
+                    index++;
+                }
+                catch(Exception KeyNotFoundException)
+                {
+                    continue;
+                }
+            }*/
         }
     }
 }
