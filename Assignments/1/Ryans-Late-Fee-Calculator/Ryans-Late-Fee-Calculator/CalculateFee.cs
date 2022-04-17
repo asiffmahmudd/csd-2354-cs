@@ -12,16 +12,19 @@ namespace Ryans_Late_Fee_Calculator
     {
         private double lateFeeRate; // variable for late fee of the form
         private string formType;
-        public static double newMovieTotalFee { get; private set; }
-        public static double libraryMovieTotalFee { get; private set; }
-        public static double kidsMovieTotalFee { get; private set; }
-        public static double totalCalculatedFee { get; private set; }
+        public static double newMovieTotalFee { get; set; }
+        public static double libraryMovieTotalFee { get; set; }
+        public static double kidsMovieTotalFee { get; set; }
+        public static double totalCalculatedFee { get; set; }
+        public static bool isCalculated { get; private set; }
 
         Form addMovieForm;
-
-        public CalculateFee(string formType, int moviesCount, double lateFee, string titleText)
+        MainMenu menuObj;
+        public CalculateFee(string formType, int moviesCount, double lateFee, string titleText, MainMenu obj)
         {
             InitializeComponent();
+            menuObj = obj;
+            isCalculated = false;
             currentDate.Value = DateTime.Today;  //getting today's date and changing the value of current day field
             numberOfMoviesCalculated.Text = moviesCount.ToString();
             dueDate.MaxDate = DateTime.Today.AddDays(-1);
@@ -152,6 +155,7 @@ namespace Ryans_Late_Fee_Calculator
                                 out int numberOfMovies))
                 {
                     CalculateAndSetText(currentDateValue, dueDateValue, customerType, numberOfMovies);
+                    isCalculated = true;
                     btnReturn.Focus();
                 }
             }
@@ -196,14 +200,34 @@ namespace Ryans_Late_Fee_Calculator
             CalculateLateFee();
         }
 
-        //event handler for return button
-        private void btnReturn_Click(object sender, EventArgs e)
+        public void ClearData()
         {
-            //ClearTextBoxes(); // clearing the text boxes
-            //ResetUserInput(); // clearing the text boxes
+            ClearTextBoxes(); // clearing input if they were not calculated
+            ResetUserInput(); // clearing input if they were not calculated
+            RentalItemDB.ClearSelectedMovies(); //clearing the selected items if they were not calculated
+            ClearErrorMessage(); // clearing error messages
+            dueDate.Focus();
+            menuObj.ClearData();
+            numberOfMoviesCalculated.Text = "0";
+            Hide();  // closing the current form
+        }
+        private void ClosingProcesses()
+        {
+            if (!isCalculated)
+            {
+                ClearTextBoxes(); // clearing input if they were not calculated
+                ResetUserInput(); // clearing input if they were not calculated
+                RentalItemDB.ClearSelectedMovies(); //clearing the selected items if they were not calculated
+            }
             ClearErrorMessage(); // clearing error messages
             dueDate.Focus();
             Hide();  // closing the current form
+        }
+
+        //event handler for return button
+        private void btnReturn_Click(object sender, EventArgs e)
+        {
+            ClosingProcesses();
         }
 
         
@@ -214,12 +238,14 @@ namespace Ryans_Late_Fee_Calculator
             lateFee.Text = "";
         }
 
+        //event handler for changing the value of dueDate field
         private void dueDate_ValueChanged(object sender, EventArgs e)
         {
             numberOfDaysLate.Text = "";
         }
 
-        private void btnAddMovies_Click(object sender, EventArgs e)
+        //event handler for add movie button click
+        private void btnSelectMovies_Click(object sender, EventArgs e)
         {
             DialogResult selectedBtn = addMovieForm.ShowDialog();
             if(selectedBtn == DialogResult.OK)
@@ -228,5 +254,9 @@ namespace Ryans_Late_Fee_Calculator
             }
         }
 
+        private void CalculateFee_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            ClosingProcesses();
+        }
     }
 }

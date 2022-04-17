@@ -198,7 +198,7 @@
             this.valueTotalFee.AutoSize = true;
             this.valueTotalFee.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F);
             this.valueTotalFee.ForeColor = System.Drawing.Color.White;
-            this.valueTotalFee.Location = new System.Drawing.Point(248, 519);
+            this.valueTotalFee.Location = new System.Drawing.Point(271, 519);
             this.valueTotalFee.Name = "valueTotalFee";
             this.valueTotalFee.Size = new System.Drawing.Size(66, 26);
             this.valueTotalFee.TabIndex = 3;
@@ -209,7 +209,7 @@
             this.valueCurrentCalculatedFee.AutoSize = true;
             this.valueCurrentCalculatedFee.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F);
             this.valueCurrentCalculatedFee.ForeColor = System.Drawing.Color.White;
-            this.valueCurrentCalculatedFee.Location = new System.Drawing.Point(377, 554);
+            this.valueCurrentCalculatedFee.Location = new System.Drawing.Point(402, 554);
             this.valueCurrentCalculatedFee.Name = "valueCurrentCalculatedFee";
             this.valueCurrentCalculatedFee.Size = new System.Drawing.Size(66, 26);
             this.valueCurrentCalculatedFee.TabIndex = 5;

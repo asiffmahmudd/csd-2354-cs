@@ -45,22 +45,23 @@ namespace Ryans_Late_Fee_Calculator
             }
         }
 
+        //this method executes when the form loads and fill in the necesssary data
         private void FormLateFilms_Load(object sender, EventArgs e)
         {
-            RentalMaintenanceForm.FillMovieListBox(lateMoviesList);
-            List<RentalItem> checkedItems = null;
-            List<RentalItem> moviesInTheList = RentalItemDB.GetMovies();
+            RentalMaintenanceForm.FillMovieListBox(lateMoviesList, formType); //filling in the list of movies
+            List<RentalItem> checkedItems = null; // variable for already checked items
+            List<RentalItem> moviesInTheList = RentalItemDB.GetMovieList(formType); // current movie list in the database
             try
             {
-                checkedItems = RentalItemDB.GetCalculatedMovieList(formType); 
+                checkedItems = RentalItemDB.GetCalculatedMovieList(formType); // getting the checked items from db
                 int index = 0;
-                foreach (RentalItem listItem in moviesInTheList)
+                foreach (RentalItem listItem in moviesInTheList) // looping through all items
                 {
-                    foreach (RentalItem checkedItem in checkedItems)
+                    foreach (RentalItem checkedItem in checkedItems) // looping through the checked items
                     {
-                        if (listItem.GetMovieNo() == checkedItem.GetMovieNo())
+                        if (listItem.GetMovieNo() == checkedItem.GetMovieNo()) // checking if the item is checked
                         {
-                            lateMoviesList.SetItemChecked(index, true);
+                            lateMoviesList.SetItemChecked(index, true); // checking the item
                         }
                     }
                     index++;
@@ -68,7 +69,7 @@ namespace Ryans_Late_Fee_Calculator
             }
             catch(Exception KeyNotFoundException)
             {
-
+                Console.WriteLine(KeyNotFoundException.Message);
             }
         }
     }

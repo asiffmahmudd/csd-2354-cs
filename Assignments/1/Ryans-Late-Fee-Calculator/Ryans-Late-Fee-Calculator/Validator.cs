@@ -113,6 +113,16 @@ namespace Ryans_Late_Fee_Calculator
             return false;
         }
 
+        //method for checking movie type
+        public static bool IsMovieTypeValid(string movieType)
+        {
+            if (movieType == MainMenu.typeNewRelease || movieType == MainMenu.typeLibraryMovies || movieType == MainMenu.typeKidsMovies)
+            {
+                return true;
+            }
+            return false;
+        }
+
         //method for checking movie no
         public static bool IsMovieNoValid(string movieNoText, out int movieNo, out string errorMsg)
         {

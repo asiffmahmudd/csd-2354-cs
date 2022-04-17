@@ -46,7 +46,7 @@
             this.labelNumberOfMoviesCalculated = new System.Windows.Forms.Label();
             this.numberOfMoviesCalculated = new System.Windows.Forms.TextBox();
             this.btnContainer = new System.Windows.Forms.Panel();
-            this.btnAddMovies = new System.Windows.Forms.Button();
+            this.btnSelectMovies = new System.Windows.Forms.Button();
             this.currentDate = new System.Windows.Forms.DateTimePicker();
             this.customerType = new System.Windows.Forms.ComboBox();
             this.dueDate = new System.Windows.Forms.DateTimePicker();
@@ -228,7 +228,7 @@
             // btnContainer
             // 
             this.btnContainer.BackColor = System.Drawing.Color.White;
-            this.btnContainer.Controls.Add(this.btnAddMovies);
+            this.btnContainer.Controls.Add(this.btnSelectMovies);
             this.btnContainer.Controls.Add(this.currentDate);
             this.btnContainer.Controls.Add(this.customerType);
             this.btnContainer.Controls.Add(this.dueDate);
@@ -252,18 +252,18 @@
             this.btnContainer.Size = new System.Drawing.Size(408, 675);
             this.btnContainer.TabIndex = 2;
             // 
-            // btnAddMovies
+            // btnSelectMovies
             // 
-            this.btnAddMovies.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(99)))), ((int)(((byte)(217)))));
-            this.btnAddMovies.Font = new System.Drawing.Font("Montserrat", 9F, System.Drawing.FontStyle.Bold);
-            this.btnAddMovies.ForeColor = System.Drawing.Color.White;
-            this.btnAddMovies.Location = new System.Drawing.Point(48, 182);
-            this.btnAddMovies.Name = "btnAddMovies";
-            this.btnAddMovies.Size = new System.Drawing.Size(315, 32);
-            this.btnAddMovies.TabIndex = 8;
-            this.btnAddMovies.Text = "&Add Movies";
-            this.btnAddMovies.UseVisualStyleBackColor = false;
-            this.btnAddMovies.Click += new System.EventHandler(this.btnAddMovies_Click);
+            this.btnSelectMovies.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(99)))), ((int)(((byte)(217)))));
+            this.btnSelectMovies.Font = new System.Drawing.Font("Montserrat", 9F, System.Drawing.FontStyle.Bold);
+            this.btnSelectMovies.ForeColor = System.Drawing.Color.White;
+            this.btnSelectMovies.Location = new System.Drawing.Point(48, 182);
+            this.btnSelectMovies.Name = "btnSelectMovies";
+            this.btnSelectMovies.Size = new System.Drawing.Size(315, 32);
+            this.btnSelectMovies.TabIndex = 8;
+            this.btnSelectMovies.Text = "&Select Movies";
+            this.btnSelectMovies.UseVisualStyleBackColor = false;
+            this.btnSelectMovies.Click += new System.EventHandler(this.btnSelectMovies_Click);
             // 
             // currentDate
             // 
@@ -325,6 +325,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "CalculateFee";
             this.Text = "New Release";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.CalculateFee_FormClosing);
             ((System.ComponentModel.ISupportInitialize)(this.calculatorImage)).EndInit();
             this.btnContainer.ResumeLayout(false);
             this.btnContainer.PerformLayout();
@@ -356,7 +357,7 @@
         private System.Windows.Forms.DateTimePicker dueDate;
         private System.Windows.Forms.ComboBox customerType;
         private System.Windows.Forms.DateTimePicker currentDate;
-        private System.Windows.Forms.Button btnAddMovies;
+        private System.Windows.Forms.Button btnSelectMovies;
 
         // btn handlers
 

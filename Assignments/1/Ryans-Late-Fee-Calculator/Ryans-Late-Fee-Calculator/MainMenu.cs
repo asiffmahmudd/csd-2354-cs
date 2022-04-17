@@ -50,11 +50,11 @@ namespace Ryans_Late_Fee_Calculator
         public MainMenu()
         {
             // creating objects and assigning them to the variables
-            newReleaseObj = new CalculateFee(typeNewRelease, newReleasedMoviesCount, newReleaseRate, typeNewRelease + " ($" + newReleaseRate + "/day)");
-            libraryObj = new CalculateFee(typeLibraryMovies, libraryMoviesCount, libraryMoviesRate, typeLibraryMovies + " ($" + libraryMoviesRate + "/day)");
-            kidsObj = new CalculateFee(typeKidsMovies, kidsMoviesCount, kidMoviesRate, typeKidsMovies + " ($" + kidMoviesRate + "/day)");
+            newReleaseObj = new CalculateFee(typeNewRelease, newReleasedMoviesCount, newReleaseRate, typeNewRelease + " ($" + newReleaseRate + "/day)", this);
+            libraryObj = new CalculateFee(typeLibraryMovies, libraryMoviesCount, libraryMoviesRate, typeLibraryMovies + " ($" + libraryMoviesRate + "/day)", this);
+            kidsObj = new CalculateFee(typeKidsMovies, kidsMoviesCount, kidMoviesRate, typeKidsMovies + " ($" + kidMoviesRate + "/day)", this);
 
-            rentalFormObj = new RentalMaintenanceForm();
+            rentalFormObj = new RentalMaintenanceForm(newReleaseObj, libraryObj, kidsObj);
             rentalDbObj = new RentalItemDB();
 
             //setting event handler for different type of form while closing
@@ -78,7 +78,7 @@ namespace Ryans_Late_Fee_Calculator
             }
             catch(System.ObjectDisposedException) // exception if the object is disposed already 
             {
-                newReleaseObj = new CalculateFee(typeNewRelease, newReleasedMoviesCount, newReleaseRate, typeNewRelease + " ($" + newReleaseRate + "/day)");
+                newReleaseObj = new CalculateFee(typeNewRelease, newReleasedMoviesCount, newReleaseRate, typeNewRelease + " ($" + newReleaseRate + "/day)", this);
                 newReleaseObj.ShowDialog();
             }
             catch (Exception ex) // exception for other errors
@@ -96,7 +96,7 @@ namespace Ryans_Late_Fee_Calculator
             }
             catch (System.ObjectDisposedException) // exception if the object is disposed already 
             {
-                kidsObj = new CalculateFee(typeKidsMovies, kidsMoviesCount, kidMoviesRate, typeKidsMovies + " ($" + kidMoviesRate + "/day)");
+                kidsObj = new CalculateFee(typeKidsMovies, kidsMoviesCount, kidMoviesRate, typeKidsMovies + " ($" + kidMoviesRate + "/day)", this);
                 kidsObj.ShowDialog();
             }
             catch (Exception ex) // exception for other errors
@@ -114,7 +114,7 @@ namespace Ryans_Late_Fee_Calculator
             }
             catch (System.ObjectDisposedException) // exception if the object is disposed already 
             {
-                libraryObj = new CalculateFee(typeLibraryMovies, libraryMoviesCount, libraryMoviesRate, typeLibraryMovies + " ($" + libraryMoviesRate + "/day)");
+                libraryObj = new CalculateFee(typeLibraryMovies, libraryMoviesCount, libraryMoviesRate, typeLibraryMovies + " ($" + libraryMoviesRate + "/day)", this);
                 libraryObj.ShowDialog();
             }
             catch (Exception ex) // exception for other errors
@@ -137,6 +137,19 @@ namespace Ryans_Late_Fee_Calculator
         private void btnExit_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        public void ClearData()
+        {
+            CalculateFee.newMovieTotalFee = 0;
+            CalculateFee.libraryMovieTotalFee = 0;
+            CalculateFee.kidsMovieTotalFee = 0;
+            CalculateFee.totalCalculatedFee = 0;
+            newReleasedMoviesCount = 0;
+            libraryMoviesCount = 0;
+            kidsMoviesCount = 0;
+            valueTotalFee.Text = "0.00";
+            valueCurrentCalculatedFee.Text = "0.00";
         }
 
         private void btnMaintenance_Click(object sender, EventArgs e)

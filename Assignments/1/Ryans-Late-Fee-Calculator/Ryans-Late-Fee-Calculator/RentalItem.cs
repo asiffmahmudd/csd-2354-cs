@@ -10,6 +10,7 @@ namespace Ryans_Late_Fee_Calculator
     {
         private int MovieNo;
         private string Description;
+        private string MovieType;
         private string Rating;
 
         public RentalItem()
@@ -18,13 +19,15 @@ namespace Ryans_Late_Fee_Calculator
         }
 
         //constructor with paramteres
-        public RentalItem(int movieNo, string description, string rating)
+        public RentalItem(int movieNo, string description, string movieType, string rating)
         {
             MovieNo = movieNo;
             Description = description;
             Rating = rating;
+            MovieType = movieType;
         }
 
+        //formatting the text
         public string GetDisplayText()
         {
             return MovieNo + "    " + Description + " " + Rating; 
@@ -46,6 +49,11 @@ namespace Ryans_Late_Fee_Calculator
             return Rating;
         }
 
+        public string GetMovieType()
+        {
+            return MovieType;
+        }
+
         //setters for the class variables
 
         public void SetMovieNo(int movieNo)
@@ -61,6 +69,11 @@ namespace Ryans_Late_Fee_Calculator
         public void SetRating(string rating)
         {
             Rating = rating;
+        }
+
+        public void SetMovieType(string movieType)
+        {
+            MovieType = movieType;
         }
     }
 }
