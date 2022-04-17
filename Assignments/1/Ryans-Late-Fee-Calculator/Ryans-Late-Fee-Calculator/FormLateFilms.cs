@@ -48,29 +48,28 @@ namespace Ryans_Late_Fee_Calculator
         private void FormLateFilms_Load(object sender, EventArgs e)
         {
             RentalMaintenanceForm.FillMovieListBox(lateMoviesList);
-
-            lateMoviesList.SetItemChecked(0, true);
-            //int index = 0;
-            
-            /*
-            foreach (ListItem listItem in lateMoviesList.Items)
+            List<RentalItem> checkedItems = null;
+            List<RentalItem> moviesInTheList = RentalItemDB.GetMovies();
+            try
             {
-                try
+                checkedItems = RentalItemDB.GetCalculatedMovieList(formType); 
+                int index = 0;
+                foreach (RentalItem listItem in moviesInTheList)
                 {
-                    foreach (RentalItem checkedItem in RentalItemDB.CalculatedMovieList[formType])
+                    foreach (RentalItem checkedItem in checkedItems)
                     {
-                        if (checkedItem.GetMovieNo() == listItem.Value.GetMovieNo())
+                        if (listItem.GetMovieNo() == checkedItem.GetMovieNo())
                         {
                             lateMoviesList.SetItemChecked(index, true);
                         }
                     }
                     index++;
                 }
-                catch(Exception KeyNotFoundException)
-                {
-                    continue;
-                }
-            }*/
+            }
+            catch(Exception KeyNotFoundException)
+            {
+
+            }
         }
     }
 }

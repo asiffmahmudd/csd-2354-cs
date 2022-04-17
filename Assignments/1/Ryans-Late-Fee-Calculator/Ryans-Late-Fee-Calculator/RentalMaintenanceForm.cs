@@ -44,6 +44,10 @@ namespace Ryans_Late_Fee_Calculator
                 movieListBox.Items.Remove(movieListBox.SelectedItem);
                 RentalItemDB.SaveMovies(MovieList);
             }
+            else
+            {
+                MessageBox.Show("Please select at least one movie", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void RentalMaintenanceForm_Load(object sender, EventArgs e)

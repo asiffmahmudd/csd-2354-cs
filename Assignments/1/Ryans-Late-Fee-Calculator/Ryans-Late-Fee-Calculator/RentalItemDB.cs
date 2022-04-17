@@ -9,7 +9,7 @@ namespace Ryans_Late_Fee_Calculator
     public class RentalItemDB
     {
         private static List<RentalItem> movies;
-        public static SortedList<string, List<RentalItem>> CalculatedMovieList;
+        private static SortedList<string, List<RentalItem>> CalculatedMovieList;
 
         public RentalItemDB()
         {
@@ -37,5 +37,11 @@ namespace Ryans_Late_Fee_Calculator
                 CalculatedMovieList.Add(formType, movieList);
             }
         }
+
+        public static List<RentalItem> GetCalculatedMovieList(string formType)
+        {
+            return CalculatedMovieList[formType];
+        }
+
     }
 }

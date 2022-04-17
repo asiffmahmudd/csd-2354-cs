@@ -16,12 +16,12 @@ namespace Ryans_Late_Fee_Calculator
         public NewMovie()
         {
             InitializeComponent();
-            this.rating.SelectedIndex = 0;
+            rating.SelectedIndex = 0;
         }
 
         public RentalItem GetNewRental()
         {
-            this.ShowDialog();
+            ShowDialog();
             return newItem;
         }
 
@@ -69,7 +69,7 @@ namespace Ryans_Late_Fee_Calculator
             if (IsDataValid())
             {
                 ClearErrorMessage();
-                this.Close();
+                Close();
             }
         }
 

@@ -199,8 +199,8 @@ namespace Ryans_Late_Fee_Calculator
         //event handler for return button
         private void btnReturn_Click(object sender, EventArgs e)
         {
-            ClearTextBoxes(); // clearing the text boxes
-            ResetUserInput(); // clearing the text boxes
+            //ClearTextBoxes(); // clearing the text boxes
+            //ResetUserInput(); // clearing the text boxes
             ClearErrorMessage(); // clearing error messages
             dueDate.Focus();
             Hide();  // closing the current form
