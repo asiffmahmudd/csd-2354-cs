@@ -19,6 +19,7 @@ namespace InventoryMaintenance
 
         private InvItem invItem = null;
 
+
         public InvItem GetNewItem()
         {
             LoadComboBox();
@@ -26,6 +27,7 @@ namespace InventoryMaintenance
             return invItem;
         }
 
+        // method for loading data in the combo box
         private void LoadComboBox()
         {
             cboSizeOrManufacturer.Items.Clear();
@@ -45,32 +47,45 @@ namespace InventoryMaintenance
                 cboSizeOrManufacturer.Items.Add("Roundup");
                 cboSizeOrManufacturer.Items.Add("Scotts");
             }
+            cboSizeOrManufacturer.SelectedIndex = 0;
         }
 
-        private void btnSave_Click(object sender, EventArgs e)
+        //method for checking validation and creating appropriate object for the invItem variable
+        private void ProcessData()
         {
-            if (IsValidData())
+            if(
+                Validator.IsPresent(txtItemNo) &&
+                Validator.IsInt32(txtItemNo, out int itemNo) &&
+                Validator.IsPresent(txtDescription) &&
+                Validator.IsPresent(txtPrice) &&
+                Validator.IsDecimal(txtPrice, out decimal price)
+            )
             {
-                invItem = new InvItem(Convert.ToInt32(txtItemNo.Text),
-                    txtDescription.Text, Convert.ToDecimal(txtPrice.Text));
+                if (rdoPlant.Checked)
+                {
+                    invItem = new Plant(itemNo, txtDescription.Text, price, cboSizeOrManufacturer.Text);
+                }
+                else
+                {
+                    invItem = new Supply(itemNo, txtDescription.Text, price, cboSizeOrManufacturer.Text);
+                }
                 this.Close();
             }
         }
 
-        private bool IsValidData()
+        //event handler for save button
+        private void btnSave_Click(object sender, EventArgs e)
         {
-            return Validator.IsPresent(txtItemNo) &&
-                   Validator.IsInt32(txtItemNo) &&
-                   Validator.IsPresent(txtDescription) &&
-                   Validator.IsPresent(txtPrice) &&
-                   Validator.IsDecimal(txtPrice);
+            ProcessData();
         }
 
+        //event handler for cancel button
         private void btnCancel_Click(object sender, EventArgs e)
         {
             this.Close();
         }
 
+        // event handler for changing the checkboxes. it changes the label before the checkboxes
         private void rdoPlant_CheckedChanged(object sender, EventArgs e)
         {
             if (rdoPlant.Checked)

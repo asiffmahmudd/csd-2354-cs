@@ -12,10 +12,12 @@ namespace InventoryMaintenance
         private string description;
         private decimal price;
 
+        //no parameter constructor
         public InvItem()
         {
         }
 
+        // constructor with parameters
         public InvItem(int itemNo, string description, decimal price)
         {
             this.itemNo = itemNo;
@@ -23,6 +25,7 @@ namespace InventoryMaintenance
             this.price = price;
         }
 
+        // getter and setter for the variable
         public int ItemNo
         {
             get
@@ -59,6 +62,7 @@ namespace InventoryMaintenance
             }
         }
 
+        // overrideable method
         public virtual string GetDisplayText() => itemNo + "    " + description + " (" + price.ToString("c") + ")";
     }
 }

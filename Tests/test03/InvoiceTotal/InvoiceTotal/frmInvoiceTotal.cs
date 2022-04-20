@@ -12,8 +12,10 @@ namespace InvoiceTotal
             frmTaxObj = new frmSalesTax();
         }
 
-        decimal SalesTaxPct = 7.75m;
+        // 2022 tax rate for the lowest tax bracket of the province of British Columbia is 5.06
+        decimal SalesTaxPct = 5.06m; // default value for tax
 
+        //calculating and returning the discount percent depending on product total
         private decimal GetDiscountPercent(decimal productTotal)
         {
             decimal discountPercent = .0m;
@@ -28,6 +30,7 @@ namespace InvoiceTotal
             return discountPercent;
         }
 
+        // setting text boxes value according to the calculated value
         private void SetTextBoxes(decimal discountAmount, decimal subtotal, decimal tax, decimal total)
         {
             txtDiscountAmount.Text = discountAmount.ToString("c");
@@ -36,6 +39,7 @@ namespace InvoiceTotal
             txtTotal.Text = total.ToString("c");
         }
 
+        //method for calculating all the fields
         private void CalculateData(decimal productTotal)
         {
             decimal discountPercent = GetDiscountPercent(productTotal);
@@ -53,21 +57,21 @@ namespace InvoiceTotal
                 Validator.IsPresent(txtProductTotal, "Subtotal") &&
                 Validator.IsDecimal(txtProductTotal, "Subtotal", out decimal productTotal) &&
                 Validator.IsWithinRange(txtProductTotal, "Subtotal", 0, 1000000)
-               )
+               ) // data validation
             {
                 CalculateData(productTotal);
-                txtProductTotal.Focus();
+                txtProductTotal.Focus(); // changing focus to the input field
             }
         }
 
+        // method for changing the tax variable and the label
         private void ChangeTax(decimal newTax)
         {
             SalesTaxPct = newTax;
             labelTax.Text = "Tax (" + SalesTaxPct.ToString("0.00") +"%):";
-            ClearFields();
-            txtProductTotal.Focus();
         }
 
+        //method for clearing teh fields
         private void ClearFields()
         {
             txtDiscountAmount.Text = "";
@@ -76,16 +80,19 @@ namespace InvoiceTotal
             txtTotal.Text = "";
         }
 
+        //event handler for calculate button
         private void btnCalculate_Click(object sender, EventArgs e)
         {
             ProcessData();
         }
 
+        //event handler for exit button
         private void btnExit_Click(object sender, EventArgs e)
         {
             this.Close();
         }
 
+        //event handler for change percent button click
         private void btnChangePercent_Click(object sender, EventArgs e)
         {
             DialogResult isOk = frmTaxObj.ShowDialog();
@@ -93,6 +100,8 @@ namespace InvoiceTotal
             {
                 decimal newTax = frmSalesTax.NewTax;
                 ChangeTax(newTax);
+                txtProductTotal.Focus();
+                ClearFields();
             }
         }
     }

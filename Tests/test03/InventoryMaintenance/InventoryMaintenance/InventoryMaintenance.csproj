@@ -9,7 +9,7 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>InventoryMaintenance</RootNamespace>
     <AssemblyName>InventoryMaintenance</AssemblyName>
-    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <TargetFrameworkProfile />
   </PropertyGroup>
@@ -61,8 +61,10 @@
       <DependentUpon>frmNewItem.cs</DependentUpon>
     </Compile>
     <Compile Include="InvItemList.cs" />
+    <Compile Include="Plant.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Supply.cs" />
     <Compile Include="Validator.cs" />
     <EmbeddedResource Include="frmNewItem.resx">
       <DependentUpon>frmNewItem.cs</DependentUpon>

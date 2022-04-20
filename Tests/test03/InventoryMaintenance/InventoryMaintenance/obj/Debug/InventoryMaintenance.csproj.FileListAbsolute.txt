@@ -62,3 +62,15 @@ C:\C# 2015\Extra exercises\Exercise starts\Chapter 14\InventoryMaintenance\Inven
 C:\C# 2015\Extra exercises\Exercise starts\Chapter 14\InventoryMaintenance\InventoryMaintenance\obj\Debug\InventoryMaintenance.frmInvMaint.resources
 C:\C# 2015\Extra exercises\Exercise starts\Chapter 14\InventoryMaintenance\InventoryMaintenance\obj\Debug\InventoryMaintenance.Properties.Resources.resources
 C:\C# 2015\Extra exercises\Exercise starts\Chapter 14\InventoryMaintenance\InventoryMaintenance\obj\Debug\InventoryMaintenance.csproj.GenerateResource.Cache
+D:\Lambton\Term-2\CSD-2354-C#\Tests\test03\InventoryMaintenance\InventoryMaintenance\obj\Debug\InventoryMaintenance.csproj.AssemblyReference.cache
+D:\Lambton\Term-2\CSD-2354-C#\Tests\test03\InventoryMaintenance\InventoryMaintenance\obj\Debug\InventoryMaintenance.csproj.SuggestedBindingRedirects.cache
+D:\Lambton\Term-2\CSD-2354-C#\Tests\test03\InventoryMaintenance\InventoryMaintenance\obj\Debug\InventoryMaintenance.frmNewItem.resources
+D:\Lambton\Term-2\CSD-2354-C#\Tests\test03\InventoryMaintenance\InventoryMaintenance\obj\Debug\InventoryMaintenance.frmInvMaint.resources
+D:\Lambton\Term-2\CSD-2354-C#\Tests\test03\InventoryMaintenance\InventoryMaintenance\obj\Debug\InventoryMaintenance.Properties.Resources.resources
+D:\Lambton\Term-2\CSD-2354-C#\Tests\test03\InventoryMaintenance\InventoryMaintenance\obj\Debug\InventoryMaintenance.csproj.GenerateResource.cache
+D:\Lambton\Term-2\CSD-2354-C#\Tests\test03\InventoryMaintenance\InventoryMaintenance\obj\Debug\InventoryMaintenance.csproj.CoreCompileInputs.cache
+D:\Lambton\Term-2\CSD-2354-C#\Tests\test03\InventoryMaintenance\InventoryMaintenance\obj\Debug\InventoryMaintenance.exe
+D:\Lambton\Term-2\CSD-2354-C#\Tests\test03\InventoryMaintenance\InventoryMaintenance\bin\Debug\InventoryMaintenance.exe.config
+D:\Lambton\Term-2\CSD-2354-C#\Tests\test03\InventoryMaintenance\InventoryMaintenance\bin\Debug\InventoryMaintenance.exe
+D:\Lambton\Term-2\CSD-2354-C#\Tests\test03\InventoryMaintenance\InventoryMaintenance\bin\Debug\InventoryMaintenance.pdb
+D:\Lambton\Term-2\CSD-2354-C#\Tests\test03\InventoryMaintenance\InventoryMaintenance\obj\Debug\InventoryMaintenance.pdb

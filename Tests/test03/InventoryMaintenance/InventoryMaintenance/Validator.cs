@@ -23,6 +23,7 @@ namespace InventoryMaintenance
 			}
 		}
 
+		//method for checking null values
 		public static bool IsPresent(TextBox textBox)
 		{
 			if (textBox.Text == "")
@@ -34,9 +35,9 @@ namespace InventoryMaintenance
 			return true;
 		}
 
-        public static bool IsDecimal(TextBox textBox)
+		//method for checking decimal values
+        public static bool IsDecimal(TextBox textBox, out decimal number)
         {
-            decimal number = 0m;
             if (Decimal.TryParse(textBox.Text, out number))
             {
                 return true;
@@ -49,9 +50,9 @@ namespace InventoryMaintenance
             }
         }
 
-        public static bool IsInt32(TextBox textBox)
+		//method for checking int values
+        public static bool IsInt32(TextBox textBox, out int number)
         {
-            int number = 0;
             if (Int32.TryParse(textBox.Text, out number))
             {
                 return true;
@@ -64,9 +65,10 @@ namespace InventoryMaintenance
             }
         }
 
+		//method for checking if the value within range
 		public static bool IsWithinRange(TextBox textBox, decimal min, decimal max)
 		{
-			decimal number = Convert.ToDecimal(textBox.Text);
+			Int32.TryParse(textBox.Text, out int number);
 			if (number < min || number > max)
 			{
 				MessageBox.Show(textBox.Tag + " must be between " + min

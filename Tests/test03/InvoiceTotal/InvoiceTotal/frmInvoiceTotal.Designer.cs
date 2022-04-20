@@ -150,7 +150,7 @@ namespace InvoiceTotal
             this.labelTax.Name = "labelTax";
             this.labelTax.Size = new System.Drawing.Size(80, 16);
             this.labelTax.TabIndex = 6;
-            this.labelTax.Text = "Tax (7.75%):";
+            this.labelTax.Text = "Tax (5.06%):";
             // 
             // txtTax
             // 
